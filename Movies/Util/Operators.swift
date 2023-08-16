@@ -1,5 +1,5 @@
 //
-//  ChainingPrecendence.swift
+//  Operators.swift
 //  Movies
 //
 //  Created by Erdem on 16.08.2023.

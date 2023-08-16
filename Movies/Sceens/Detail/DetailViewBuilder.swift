@@ -13,8 +13,9 @@ final class DetailViewBuilder: DetailViewBuilderProtocol{
         let view = DetailViewController()
         let interactor = DetailViewInteractor(service: app.service)
         let router = DetailViewRouter()
-      
-        
+        let presenter = DetailViewPresenter(interactor: interactor, router: router, id: ID)
+        view.presenter = presenter
+        presenter.view = view
         return view
     }
     

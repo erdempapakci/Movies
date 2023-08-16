@@ -6,21 +6,31 @@
 //
 
 import Foundation
-fileprivate let baseURL = URL(string: "https://itunes.apple.com")
 
-enum MovieDetailEndPoint {
+enum MovieDetailEndPoint: EndPointProtocol {
+    var parameter: [URLQueryItem] {
+        
+        return [
+            URLQueryItem(name: "api_key", value: URLConstants.APIKey),]
+    }
+    
     var url: URL {
-        guard let urlAllowedPath = path.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed) else {return baseURL!}
-        let url = URL(string: urlAllowedPath, relativeTo: baseURL)
+        var components = URLComponents()
+        components.scheme = URLConstants.scheme
+        components.host = URLConstants.host
+        components.path = path
+        components.queryItems = parameter
        
-        return url!
+        let finalURL = components.url!
+        
+                return finalURL
     }
     
     var path: String {
         switch self {
         case .detail(let id):
             
-            return "/lookup?id=\(id)"
+            return "/3/movie/\(id)"
         }
     }
     

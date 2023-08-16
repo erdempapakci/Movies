@@ -43,9 +43,9 @@ final class DetailViewController: BaseViewController<DetailViewPresenter> {
 extension DetailViewController: DetailViewProtocol {
     
     func setDetail(data: MovieDetail) {
-        
+        print(data)
          detailComponent.setData(value: data)
-         ImageManager.shared.downloadOrGetCache(url: data.mainImage, for: backgroundImage)
+        ImageManager.shared.downloadOrGetCache(url: data.posterPath, for: backgroundImage)
         
     }
 }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class iTunesListCell: GenericCollectionViewCell<MovieEntity>, CellProvidable {
+final class MovieListCell: GenericCollectionViewCell<MovieEntity>, CellProvidable {
     typealias V = MovieEntity
     
     private lazy var imageView: UIImageView = .init() &> {

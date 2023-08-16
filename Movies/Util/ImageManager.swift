@@ -10,7 +10,7 @@ import SDWebImage
 
 extension String {
     func restoreImageURL(urlString: Self) -> Self {
-        return "http://image.tmdb.org/t/p/w300/" + urlString
+        return URLConstants.imageHost + urlString
     }
 }
 final class ImageManager: NSObject, LogProvidable {

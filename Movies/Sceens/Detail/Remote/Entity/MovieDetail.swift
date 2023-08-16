@@ -8,22 +8,23 @@
 import Foundation
 
 struct MovieDetail: Decodable {
+    let adult: Bool?
+    let backdropPath: String?
+    let budget: Int?
+    let homepage: String?
+    let id: Int?
+    let originalTitle: String?
+    let imdbID: String?
+    let overview: String?
+    let originalLanguage: String?
+    let posterPath: String?
     
-    let wrapperType: String?
-    let artistType: String?
-    let artistName: String?
-    let artistURL: String?
-    let artistID: String?
-    let genreName: String?
-    let mainImage: String?
     enum CodingKeys: String, CodingKey {
-        
-        case wrapperType = "wrapperType"
-        case artistType = "artistType"
-        case artistName = "artistName"
-        case artistURL = "artistLinkUrl"
-        case artistID = "artistId"
-        case genreName = "primaryGenreName"
-        case mainImage = "artworkUrl100"
+        case adult, budget, homepage, id, overview
+        case backdropPath = "backdrop_path"
+        case originalTitle = "original_title"
+        case imdbID = "imdb_id"
+        case originalLanguage = "original_language"
+        case posterPath = "poster_path"
     }
 }

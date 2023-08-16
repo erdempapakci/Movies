@@ -22,10 +22,12 @@ extension SearchComponent: UISearchResultsUpdating {
 
     func updateSearchResults(for searchController: UISearchController) {
         
-
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
             
                 self.textSearch.send(searchController.searchBar.text ?? "")
+         
+               
             })
 
     }

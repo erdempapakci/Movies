@@ -24,6 +24,10 @@ class MainPresenter: MainPresenterProtocol {
         self.router = router
     }
     
+    func clearData() {
+        data = []
+        view.reloadData()
+    }
     func searchData(query: String) {
         
         delegate?.handleState(state: .loading)
@@ -70,7 +74,7 @@ class MainPresenter: MainPresenterProtocol {
     
     func didSelectItem(_ index: Int) -> String {
        
-        guard let id = data[index].vote else {return ""}
+        guard let id = data[index].id else {return ""}
         let idString = "\(id)"
         return idString
          

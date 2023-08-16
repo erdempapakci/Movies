@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MovieListCellComponents: BaseCollectionView<iTunesListCell, MovieEntity> {
+class MovieListCellComponents: BaseCollectionView<MovieListCell, MovieEntity> {
 
     var adapter: MainCollectionViewAdapter
     
@@ -30,7 +30,7 @@ class MovieListCellComponents: BaseCollectionView<iTunesListCell, MovieEntity> {
     
     lazy var collectionView: UICollectionView = .init(frame: .zero, collectionViewLayout: flowLayout) &> {
     
-        $0.genericRegister(iTunesListCell.self)
+        $0.genericRegister(MovieListCell.self)
        
         $0.dataSource = adapter
         $0.delegate = adapter

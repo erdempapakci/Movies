@@ -16,7 +16,7 @@ protocol DetailViewPresenterProtocol: BasePresenterProtocol, LogProvidable {
     
 }
 protocol DetailViewInteractorProtocol: BaseInteractorProtocol {
-    func getDetailsWithID(_ id: String) -> AnyPublisher<MovieDetailResponse, Error>
+    func getDetailsWithID(_ id: String) -> AnyPublisher<MovieDetail, Error>
 }
 protocol DetailViewRouterProtocol: BaseRouterProtocol {
     

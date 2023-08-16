@@ -14,21 +14,21 @@ final class DetailViewComponent: GenericBaseView<MovieDetail> {
     }
     private lazy var visitButton: VisitButtonComponent = .init() &> {
         $0.backgroundColor = .systemRed
-        $0.data = data?.artistURL
+        
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
-    private lazy var iTunesImage: UIImageView = .init() &> {
+    private lazy var movieImage: UIImageView = .init() &> {
         $0.contentMode = .scaleToFill
         $0.clipsToBounds = true
         $0.layer.masksToBounds = true
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
  
-    private lazy var mainStackView: UIStackView = .init(arrangedSubviews: [titleLabel, iTunesImage, visitButton]) &> {
+    private lazy var mainStackView: UIStackView = .init(arrangedSubviews: [titleLabel, movieImage, visitButton]) &> {
         $0.axis = .vertical
         $0.spacing = 10
         $0.alignment = .center
-        $0.setCustomSpacing(50, after: iTunesImage)
+        $0.setCustomSpacing(50, after: movieImage)
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
    
@@ -57,8 +57,8 @@ final class DetailViewComponent: GenericBaseView<MovieDetail> {
             
         NSLayoutConstraint.activate([
           
-            iTunesImage.leadingAnchor.constraint(equalTo: mainStackView.leadingAnchor),
-            iTunesImage.trailingAnchor.constraint(equalTo: iTunesImage.trailingAnchor),
+            movieImage.leadingAnchor.constraint(equalTo: mainStackView.leadingAnchor),
+            movieImage.trailingAnchor.constraint(equalTo: movieImage.trailingAnchor),
       
           
         ])
@@ -75,11 +75,11 @@ final class DetailViewComponent: GenericBaseView<MovieDetail> {
        
     }
     private func configureData() {
-        if let iTunesData = data  {
-            ImageManager.shared.downloadOrGetCache(url: iTunesData.mainImage, for: self.iTunesImage)
+        if let movieData = data  {
+            ImageManager.shared.downloadOrGetCache(url: movieData.posterPath, for: self.movieImage)
           
-            titleLabel.text = iTunesData.artistName
-            visitButton.data = iTunesData.artistURL
+            titleLabel.text = movieData.homepage
+            visitButton.data = movieData.overview
            
         } else {
             

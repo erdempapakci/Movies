@@ -36,7 +36,7 @@ protocol MainPresenterProtocol: BasePresenterProtocol {
     func cellForRowAt(index: Int) -> MovieEntity
     func searchData(query: String)
     func isLoadingCell(index: Int) -> Bool
-   
+    func clearData()
     func routeToDetail(id: String)
     func didSelectItem(_ index: Int) -> String
 }

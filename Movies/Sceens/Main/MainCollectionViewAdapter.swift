@@ -33,7 +33,7 @@ extension MainCollectionViewAdapter: UICollectionViewDelegate, UICollectionViewD
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.genericdequeueReusableCell(type: iTunesListCell.self, indexPath)
+        let cell = collectionView.genericdequeueReusableCell(type: MovieListCell.self, indexPath)
         
         cell.backgroundColor = .white
         cell.configure(presenter.cellForRowAt(index: indexPath.row))

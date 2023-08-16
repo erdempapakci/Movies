@@ -7,8 +7,6 @@
 
 import Foundation
 
-fileprivate let baseURL = URL(string: "https://api.themoviedb.org/3/")!
-fileprivate let APIKey =  "a37acca46f3dacc202fe88e6d3bb4258"
 
 
 enum MovieListEndPoint: EndPointProtocol, LogProvidable {
@@ -17,7 +15,7 @@ enum MovieListEndPoint: EndPointProtocol, LogProvidable {
         case .search(let query, let page):
             
             return [
-                URLQueryItem(name: "api_key", value: APIKey),
+                URLQueryItem(name: "api_key", value: URLConstants.APIKey),
                 URLQueryItem(name: "query", value: query),
                 URLQueryItem(name: "page", value: "\(page)")
             ]
@@ -29,8 +27,8 @@ enum MovieListEndPoint: EndPointProtocol, LogProvidable {
     var url: URL {
      
         var components = URLComponents()
-        components.scheme = "https"
-        components.host = "api.themoviedb.org"
+        components.scheme = URLConstants.scheme
+        components.host = URLConstants.host
         components.path = path
         components.queryItems = parameter
         
@@ -41,7 +39,7 @@ enum MovieListEndPoint: EndPointProtocol, LogProvidable {
     
     var path: String {
         switch self {
-        case .search(_):
+        case .search:
             return "/3/search/movie"
         }
     }

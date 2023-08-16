@@ -66,13 +66,14 @@ final class MainViewController: BaseViewController<MainPresenter> {
   
     private lazy var search: SearchComponent = .init() &> {
         $0.searchBar.translatesAutoresizingMaskIntoConstraints = false
+        
     }
     private lazy var emptyResultComponent: EmptyResultComponent = .init() &> {
         $0.data = false
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.largeContentTitle = ""
     }
-    private lazy var iTunesListCellComponent: MovieListCellComponents = {
+    private lazy var movieListCellComponent: MovieListCellComponents = {
         
         let layout = MovieListCellComponents(adapter: adapter)
         layout.translatesAutoresizingMaskIntoConstraints = false
@@ -105,8 +106,13 @@ final class MainViewController: BaseViewController<MainPresenter> {
             .receive(on: DispatchQueue.main)
             .sink { [weak self] text in
                 guard let self = self else {return}
-               
+                if text.count > 2 {
+                    print(text)
                     self.presenter.searchData(query: text)
+                } else {
+                    presenter.clearData()
+                }
+                   
   
         }
         .store(in: &cancellables)
@@ -114,7 +120,7 @@ final class MainViewController: BaseViewController<MainPresenter> {
  
     private func implementComponents() {
         view.addSubview(emptyResultComponent)
-        view.addSubview(iTunesListCellComponent)
+        view.addSubview(movieListCellComponent)
         view.addSubview(search.searchBar)
        
         NSLayoutConstraint.activate([
@@ -124,10 +130,10 @@ final class MainViewController: BaseViewController<MainPresenter> {
       
         NSLayoutConstraint.activate([
             
-            iTunesListCellComponent.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            iTunesListCellComponent.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            iTunesListCellComponent.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
-            iTunesListCellComponent.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            movieListCellComponent.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            movieListCellComponent.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            movieListCellComponent.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
+            movieListCellComponent.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
         NSLayoutConstraint.activate([
             
@@ -150,7 +156,7 @@ extension MainViewController: MainPresenterDelegate {
             self.showActivityIndicator()
         case .newData:
            
-            iTunesListCellComponent.collectionView.reloadData()
+            movieListCellComponent.collectionView.reloadData()
         case .moreData:
            break
         case .failure(let string):
@@ -188,7 +194,7 @@ extension MainViewController: MainViewProtocol {
     }
     func reloadData() {
        
-        iTunesListCellComponent.collectionView.reloadData()
+        movieListCellComponent.collectionView.reloadData()
     
     }
     
