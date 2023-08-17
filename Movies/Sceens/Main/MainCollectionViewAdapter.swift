@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainCollectionViewAdapter: NSObject{
+class MainCollectionViewAdapter: NSObject, UIGestureRecognizerDelegate{
     
     private let presenter: MainPresenterProtocol
     private let view: MainViewProtocol
@@ -17,11 +17,7 @@ class MainCollectionViewAdapter: NSObject{
         self.view = view
         
     }
-    
-    func isLoading() {
-      
-    }
-
+ 
     
 }
 extension MainCollectionViewAdapter: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -30,17 +26,20 @@ extension MainCollectionViewAdapter: UICollectionViewDelegate, UICollectionViewD
      
         return presenter.count()
     }
-
+   
+  
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.genericdequeueReusableCell(type: MovieListCell.self, indexPath)
         
         cell.backgroundColor = .white
         cell.configure(presenter.cellForRowAt(index: indexPath.row))
-        
+      
         return cell
     }
+  
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: false)
         presenter.routeToDetail(id:  presenter.didSelectItem(indexPath.row))
     }
     

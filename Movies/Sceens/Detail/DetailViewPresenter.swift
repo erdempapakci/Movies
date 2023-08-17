@@ -44,7 +44,7 @@ final class DetailViewPresenter: DetailViewPresenterProtocol {
                 }
             } receiveValue: { [weak self] networkResponse in
                 guard let self = self else {return}
-                print(networkResponse)
+             
                 self.detailData = networkResponse
                 view?.setDetail(data: detailData!)
                
