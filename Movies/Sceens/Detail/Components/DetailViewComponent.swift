@@ -45,8 +45,6 @@ final class DetailViewComponent: GenericBaseView<MovieDetail> {
     private func configureConstraints() {
         addSubview(mainStackView)
       
-       
-        
             NSLayoutConstraint.activate([
                 mainStackView.topAnchor.constraint(equalTo: topAnchor, constant: 200),
                 mainStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 50),
@@ -81,8 +79,6 @@ final class DetailViewComponent: GenericBaseView<MovieDetail> {
             titleLabel.text = movieData.homepage
             visitButton.data = movieData.overview
            
-        } else {
-            
-        }
+        } 
     }
 }
