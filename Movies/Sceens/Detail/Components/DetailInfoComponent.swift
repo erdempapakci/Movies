@@ -47,32 +47,31 @@ final class DetailViewInfoComponent: GenericBaseView<InfoEntity>{
     }
     private lazy var languageStackView: UIStackView = .init(arrangedSubviews: [languageHolder, language]) &> {
         $0.axis = .vertical
-        $0.spacing = 10
-        
+        $0.alignment = .center
     }
    
    
     private lazy var releaseStackView: UIStackView = .init(arrangedSubviews: [releaseDateHolder, releaseDate]) &> {
         $0.axis = .vertical
-        $0.spacing = 10
+        $0.alignment = .center
     }
     private lazy var genreStackView: UIStackView = .init(arrangedSubviews: [genreHolder, genre]) &> {
         $0.axis = .vertical
-        $0.spacing = 10
+        $0.alignment = .center
     }
     
     private lazy var infoStackView: UIStackView = .init(arrangedSubviews: [genreStackView, releaseStackView, languageStackView]) &> {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.axis = .horizontal
         $0.spacing = 10
-        $0.distribution = .equalSpacing
+        $0.alignment = .center
+       
     }
     
     
     override func configureView() {
         super.configureView()
-        addSubview(scrollView)
-        scrollView.addSubview(infoStackView)
+        
         
         configureConstraints()
         configureData()
@@ -80,9 +79,10 @@ final class DetailViewInfoComponent: GenericBaseView<InfoEntity>{
     
     
     private func configureConstraints() {
-        
+        addSubview(scrollView)
+        scrollView.addSubview(infoStackView)
         NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: topAnchor),
+            scrollView.topAnchor.constraint(equalTo: topAnchor, constant: 15),
             scrollView.bottomAnchor.constraint(equalTo: bottomAnchor),
             scrollView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
             scrollView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10)
@@ -91,15 +91,15 @@ final class DetailViewInfoComponent: GenericBaseView<InfoEntity>{
         NSLayoutConstraint.activate([
             infoStackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
             infoStackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            infoStackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            infoStackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
             infoStackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
           
         ])
         
     }
     private func configureData() {
-        
-      
-        
+     
         releaseDate.text = data?.releaseDate
         genre.text = data?.genre
         language.text = data?.language?.uppercased()

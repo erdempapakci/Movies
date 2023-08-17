@@ -46,6 +46,9 @@
 		E8ABF2E82A8E51EC000A39DB /* DetailInfoComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ABF2E72A8E51EC000A39DB /* DetailInfoComponent.swift */; };
 		E8ABF2EB2A8E520C000A39DB /* InfoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ABF2EA2A8E520C000A39DB /* InfoEntity.swift */; };
 		E8ABF2ED2A8E5EFB000A39DB /* DetailOverviewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ABF2EC2A8E5EFB000A39DB /* DetailOverviewComponent.swift */; };
+		E8ABF2EF2A8E946A000A39DB /* DetailViewBottomComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ABF2EE2A8E946A000A39DB /* DetailViewBottomComponent.swift */; };
+		E8ABF2F12A8E99DF000A39DB /* GenericButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ABF2F02A8E99DF000A39DB /* GenericButton.swift */; };
+		E8ABF2F42A8E9A3C000A39DB /* CustomVisitButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ABF2F32A8E9A3C000A39DB /* CustomVisitButtonView.swift */; };
 		E8CDB1642A8D164B00E7DDEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CDB1632A8D164B00E7DDEB /* AppDelegate.swift */; };
 		E8CDB1662A8D164B00E7DDEB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CDB1652A8D164B00E7DDEB /* SceneDelegate.swift */; };
 		E8CDB16D2A8D164C00E7DDEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8CDB16C2A8D164C00E7DDEB /* Assets.xcassets */; };
@@ -109,6 +112,9 @@
 		E8ABF2E72A8E51EC000A39DB /* DetailInfoComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInfoComponent.swift; sourceTree = "<group>"; };
 		E8ABF2EA2A8E520C000A39DB /* InfoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoEntity.swift; sourceTree = "<group>"; };
 		E8ABF2EC2A8E5EFB000A39DB /* DetailOverviewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailOverviewComponent.swift; sourceTree = "<group>"; };
+		E8ABF2EE2A8E946A000A39DB /* DetailViewBottomComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewBottomComponent.swift; sourceTree = "<group>"; };
+		E8ABF2F02A8E99DF000A39DB /* GenericButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericButton.swift; sourceTree = "<group>"; };
+		E8ABF2F32A8E9A3C000A39DB /* CustomVisitButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVisitButtonView.swift; sourceTree = "<group>"; };
 		E8CDB1602A8D164B00E7DDEB /* Movies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Movies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8CDB1632A8D164B00E7DDEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8CDB1652A8D164B00E7DDEB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -215,6 +221,7 @@
 				E81102382A8D1B1500A0A919 /* GenericValue.swift */,
 				E811023A2A8D1B2800A0A919 /* GenericCollectionViewCell.swift */,
 				E811023C2A8D1B3E00A0A919 /* GenericBaseView.swift */,
+				E8ABF2F02A8E99DF000A39DB /* GenericButton.swift */,
 			);
 			path = Generic;
 			sourceTree = "<group>";
@@ -308,9 +315,11 @@
 		E81102702A8D1DB500A0A919 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				E8ABF2F22A8E9A32000A39DB /* Custom */,
 				E81102812A8D1ED000A0A919 /* DetailViewComponent.swift */,
 				E8ABF2E72A8E51EC000A39DB /* DetailInfoComponent.swift */,
 				E8ABF2EC2A8E5EFB000A39DB /* DetailOverviewComponent.swift */,
+				E8ABF2EE2A8E946A000A39DB /* DetailViewBottomComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -365,6 +374,14 @@
 				E8ABF2EA2A8E520C000A39DB /* InfoEntity.swift */,
 			);
 			path = Local;
+			sourceTree = "<group>";
+		};
+		E8ABF2F22A8E9A32000A39DB /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				E8ABF2F32A8E9A3C000A39DB /* CustomVisitButtonView.swift */,
+			);
+			path = Custom;
 			sourceTree = "<group>";
 		};
 		E8CDB1572A8D164B00E7DDEB = {
@@ -573,6 +590,7 @@
 				E8CDB1792A8D167100E7DDEB /* LogProvidable.swift in Sources */,
 				E81102452A8D1BC400A0A919 /* ViewBuilderProtocol.swift in Sources */,
 				E81102372A8D1AF700A0A919 /* BaseSearchViewController.swift in Sources */,
+				E8ABF2EF2A8E946A000A39DB /* DetailViewBottomComponent.swift in Sources */,
 				E8CDB1852A8D16F300E7DDEB /* APIMethod.swift in Sources */,
 				E81102692A8D1D2700A0A919 /* MainRouter.swift in Sources */,
 				E811027E2A8D1EA400A0A919 /* MovieDetailEndPoint.swift in Sources */,
@@ -590,6 +608,7 @@
 				E81102522A8D1C4400A0A919 /* MovieResponse.swift in Sources */,
 				E8CDB17C2A8D169800E7DDEB /* AppContainer.swift in Sources */,
 				E8CDB1872A8D170500E7DDEB /* URLConstants.swift in Sources */,
+				E8ABF2F42A8E9A3C000A39DB /* CustomVisitButtonView.swift in Sources */,
 				E8CDB1642A8D164B00E7DDEB /* AppDelegate.swift in Sources */,
 				E81102542A8D1C6300A0A919 /* MovieListEndPoint.swift in Sources */,
 				E81102652A8D1D1600A0A919 /* MainViewController.swift in Sources */,
@@ -601,6 +620,7 @@
 				E8CDB18B2A8D172200E7DDEB /* RestClient.swift in Sources */,
 				E81102902A8D1F7300A0A919 /* DetailViewBuilder.swift in Sources */,
 				E81102782A8D1E2500A0A919 /* MainCollectionViewAdapter.swift in Sources */,
+				E8ABF2F12A8E99DF000A39DB /* GenericButton.swift in Sources */,
 				E8CDB18D2A8D174700E7DDEB /* NetworkError.swift in Sources */,
 				E8ABF2EB2A8E520C000A39DB /* InfoEntity.swift in Sources */,
 				E8CDB1982A8D17CC00E7DDEB /* UIStoryboard + Ext.swift in Sources */,

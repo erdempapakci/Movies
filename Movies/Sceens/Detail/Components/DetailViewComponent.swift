@@ -19,7 +19,7 @@ final class DetailViewComponent: GenericBaseView<MovieDetail> {
    
     
     private lazy var infoComponent: DetailViewInfoComponent = .init() &> {
-        
+        $0.contentMode = .center
         $0.translatesAutoresizingMaskIntoConstraints = false
         
     }
@@ -42,13 +42,14 @@ final class DetailViewComponent: GenericBaseView<MovieDetail> {
      
     }
     
-    private lazy var mainStackView: UIStackView = .init(arrangedSubviews: [movieImage, infoComponent, overviewComponent]) &> {
+    private lazy var bottomButtonsComponent: DetailViewBottomComponent = .init() &> {
+        $0.isHidden = false
+    }
+    private lazy var mainStackView: UIStackView = .init(arrangedSubviews: [movieImage, infoComponent, overviewComponent, bottomButtonsComponent]) &> {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.axis = .vertical
         $0.alignment = .center
-        $0.distribution = .equalSpacing
-        
-        
+     
     }
     
     override func configureView() {
@@ -59,7 +60,6 @@ final class DetailViewComponent: GenericBaseView<MovieDetail> {
         
         
     }
-    
     
     private func configureConstraints() {
         addSubview(scrollView)
@@ -83,27 +83,15 @@ final class DetailViewComponent: GenericBaseView<MovieDetail> {
         
         
         NSLayoutConstraint.activate([
-            movieImage.topAnchor.constraint(equalTo: mainStackView.topAnchor),
-            movieImage.leadingAnchor.constraint(equalTo: mainStackView.leadingAnchor, constant: 20),
             movieImage.trailingAnchor.constraint(equalTo: mainStackView.trailingAnchor, constant: -20),
+            movieImage.leadingAnchor.constraint(equalTo: mainStackView.leadingAnchor, constant: 20),
+            
+           
          
         ])
-        
-        NSLayoutConstraint.activate([
-           
-            infoComponent.leadingAnchor.constraint(equalTo: mainStackView.leadingAnchor),
-            infoComponent.trailingAnchor.constraint(equalTo: mainStackView.trailingAnchor),
-            infoComponent.heightAnchor.constraint(equalToConstant: 60),
-            
-            
-        ])
-        NSLayoutConstraint.activate([
-            
-            overviewComponent.topAnchor.constraint(equalTo: infoComponent.bottomAnchor),
-            overviewComponent.leadingAnchor.constraint(equalTo: infoComponent.leadingAnchor),
-            overviewComponent.trailingAnchor.constraint(equalTo: infoComponent.trailingAnchor),
-           
-        ])
+       
+   
+       
         
         
     }
@@ -115,7 +103,6 @@ final class DetailViewComponent: GenericBaseView<MovieDetail> {
             let infoEntity = InfoEntity(voteCount: "\(movieData.voteCount ?? 0 )", releaseDate: movieData.releaseDate, genre: movieData.genres?.first?.name, status: movieData.status, imdbID: movieData.imdbID, language: movieData.originalLanguage)
             
             infoComponent.setData(value: infoEntity)
-            print(movieData.overview)
             overviewComponent.setData(value: movieData.overview)
             
             

@@ -83,12 +83,11 @@ final class MainViewController: BaseViewController<MainPresenter> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         presenter.viewDidload()
-      
+        
     }
    
-    
     override func configureViewDidLoad() {
         super.configureViewDidLoad()
        
@@ -96,6 +95,7 @@ final class MainViewController: BaseViewController<MainPresenter> {
         configureSearch()
         
     }
+    
     private func configureSearch() {
         
         search.becomeFirstResponder()
