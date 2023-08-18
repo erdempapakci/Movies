@@ -14,7 +14,34 @@ final class DetailViewController: BaseViewController<DetailViewPresenter> {
        
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
-   
+    private lazy var visitButton: UIBarButtonItem = .init() &> {
+        $0.tintColor = .white
+        $0.target = self
+        $0.image = UIImage(named: "imdb")?.withRenderingMode(.alwaysOriginal)
+        $0.tintColor = .white
+        $0.target = self
+        $0.action = #selector(visitButtonTapped)
+    }
+    private lazy var saveButton: UIBarButtonItem = .init() &> {
+        $0.tintColor = .white
+        $0.target = self
+        $0.image = UIImage(systemName: "star")
+        $0.tintColor = .white
+        $0.target = self
+        $0.action = #selector(saveButtonTapped)
+    }
+  
+    @objc private func visitButtonTapped() {
+        if (presenter.detailData?.imdbID) != nil  {
+            presenter.openURL()
+        } else {
+            showError(errorString: UIErrors.emptyIMDBID.localizedDescription)
+        }
+        
+    }
+    @objc private func saveButtonTapped() {
+        
+    }
   
     override func configureViewDidLoad() {
         super.configureViewDidLoad()
@@ -29,14 +56,17 @@ final class DetailViewController: BaseViewController<DetailViewPresenter> {
     private func configureConstraints() {
         
         view.addSubview(detailComponent)
-  
-       
+        navigationItem.rightBarButtonItems = [  saveButton, visitButton,
+        
+
+        ]
         NSLayoutConstraint.activate([
             detailComponent.topAnchor.constraint(equalTo: view.topAnchor),
             detailComponent.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             detailComponent.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             detailComponent.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+        
         
     }
     func setTitle(title: String) {
@@ -53,4 +83,5 @@ extension DetailViewController: DetailViewProtocol {
         setTitle(title: data.originalTitle ?? "")
     }
 }
+
 

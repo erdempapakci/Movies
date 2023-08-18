@@ -13,6 +13,7 @@ protocol DetailViewProtocol: BaseViewProtocol {
 
 protocol DetailViewPresenterProtocol: BasePresenterProtocol, LogProvidable {
     func fetchDetail()
+    func openURL()
     
 }
 protocol DetailViewInteractorProtocol: BaseInteractorProtocol {
@@ -20,4 +21,5 @@ protocol DetailViewInteractorProtocol: BaseInteractorProtocol {
 }
 protocol DetailViewRouterProtocol: BaseRouterProtocol {
     
+    func openURL(urlString: String?)
 }

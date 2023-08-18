@@ -43,6 +43,7 @@
 		E811028C2A8D1F4000A0A919 /* DetailViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811028B2A8D1F4000A0A919 /* DetailViewRouter.swift */; };
 		E811028E2A8D1F4700A0A919 /* DetailViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811028D2A8D1F4700A0A919 /* DetailViewInteractor.swift */; };
 		E81102902A8D1F7300A0A919 /* DetailViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811028F2A8D1F7300A0A919 /* DetailViewBuilder.swift */; };
+		E888B08A2A8F97DB003F71FD /* UIErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E888B0892A8F97DB003F71FD /* UIErrors.swift */; };
 		E8ABF2E82A8E51EC000A39DB /* DetailInfoComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ABF2E72A8E51EC000A39DB /* DetailInfoComponent.swift */; };
 		E8ABF2EB2A8E520C000A39DB /* InfoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ABF2EA2A8E520C000A39DB /* InfoEntity.swift */; };
 		E8ABF2ED2A8E5EFB000A39DB /* DetailOverviewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ABF2EC2A8E5EFB000A39DB /* DetailOverviewComponent.swift */; };
@@ -109,6 +110,7 @@
 		E811028B2A8D1F4000A0A919 /* DetailViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewRouter.swift; sourceTree = "<group>"; };
 		E811028D2A8D1F4700A0A919 /* DetailViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewInteractor.swift; sourceTree = "<group>"; };
 		E811028F2A8D1F7300A0A919 /* DetailViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewBuilder.swift; sourceTree = "<group>"; };
+		E888B0892A8F97DB003F71FD /* UIErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIErrors.swift; sourceTree = "<group>"; };
 		E8ABF2E72A8E51EC000A39DB /* DetailInfoComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInfoComponent.swift; sourceTree = "<group>"; };
 		E8ABF2EA2A8E520C000A39DB /* InfoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoEntity.swift; sourceTree = "<group>"; };
 		E8ABF2EC2A8E5EFB000A39DB /* DetailOverviewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailOverviewComponent.swift; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 		E811026A2A8D1D6100A0A919 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				E888B0862A8F97B2003F71FD /* Local */,
 				E81102722A8D1DBA00A0A919 /* Remote */,
 				E81102702A8D1DB500A0A919 /* Components */,
 				E81102872A8D1F2B00A0A919 /* DetailViewController.swift */,
@@ -352,10 +355,34 @@
 		E81102762A8D1DDA00A0A919 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				E8ABF2E92A8E5204000A39DB /* Local */,
 				E81102792A8D1E7000A0A919 /* MovieDetail.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		E888B0862A8F97B2003F71FD /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				E888B0882A8F97CF003F71FD /* Error */,
+				E888B0872A8F97BD003F71FD /* Entity */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		E888B0872A8F97BD003F71FD /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				E8ABF2EA2A8E520C000A39DB /* InfoEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		E888B0882A8F97CF003F71FD /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				E888B0892A8F97DB003F71FD /* UIErrors.swift */,
+			);
+			path = Error;
 			sourceTree = "<group>";
 		};
 		E899AB4B2A8D48D3007267EE /* Commons */ = {
@@ -366,14 +393,6 @@
 				E811022C2A8D1A8B00A0A919 /* Views */,
 			);
 			path = Commons;
-			sourceTree = "<group>";
-		};
-		E8ABF2E92A8E5204000A39DB /* Local */ = {
-			isa = PBXGroup;
-			children = (
-				E8ABF2EA2A8E520C000A39DB /* InfoEntity.swift */,
-			);
-			path = Local;
 			sourceTree = "<group>";
 		};
 		E8ABF2F22A8E9A32000A39DB /* Custom */ = {
@@ -626,6 +645,7 @@
 				E8CDB1982A8D17CC00E7DDEB /* UIStoryboard + Ext.swift in Sources */,
 				E8CDB1892A8D171B00E7DDEB /* EndPointProtocol.swift in Sources */,
 				E8ABF2ED2A8E5EFB000A39DB /* DetailOverviewComponent.swift in Sources */,
+				E888B08A2A8F97DB003F71FD /* UIErrors.swift in Sources */,
 				E81102822A8D1ED000A0A919 /* DetailViewComponent.swift in Sources */,
 				E8CDB1932A8D176800E7DDEB /* CustomDecoders.swift in Sources */,
 				E8CDB18F2A8D175800E7DDEB /* RESTService.swift in Sources */,

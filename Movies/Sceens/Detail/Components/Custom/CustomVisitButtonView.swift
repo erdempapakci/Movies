@@ -31,7 +31,7 @@ class CustomVisitButtonView: GenericButtonView<DetailViewPresenter> {
         clipsToBounds       = true
         layer.masksToBounds = false
     }
-    private func shake() {
+     func shake() {
         let shake           = CABasicAnimation(keyPath: "shake")
         shake.duration      = 0.1
         shake.repeatCount   = 2

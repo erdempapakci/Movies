@@ -48,9 +48,16 @@ class BaseViewController<T: BasePresenterProtocol>: UIViewController, BaseViewPr
         }
     }
     func showError(error: Error) {
+        
         let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .cancel))
-        alert.show(self, sender: nil)
+        present(alert, animated: true, completion: nil)
+    }
+    func showError(errorString: String) {
+        
+        let alert = UIAlertController(title: "Error", message: errorString, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel))
+        present(alert, animated: true, completion: nil)
     }
     
 }

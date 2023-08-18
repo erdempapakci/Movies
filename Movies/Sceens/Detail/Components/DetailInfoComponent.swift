@@ -53,18 +53,18 @@ final class DetailViewInfoComponent: GenericBaseView<InfoEntity>{
    
     private lazy var releaseStackView: UIStackView = .init(arrangedSubviews: [releaseDateHolder, releaseDate]) &> {
         $0.axis = .vertical
-        $0.alignment = .center
+       
     }
     private lazy var genreStackView: UIStackView = .init(arrangedSubviews: [genreHolder, genre]) &> {
         $0.axis = .vertical
-        $0.alignment = .center
+       
     }
     
     private lazy var infoStackView: UIStackView = .init(arrangedSubviews: [genreStackView, releaseStackView, languageStackView]) &> {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.axis = .horizontal
         $0.spacing = 10
-        $0.alignment = .center
+        $0.distribution = .equalSpacing
        
     }
     
@@ -82,10 +82,10 @@ final class DetailViewInfoComponent: GenericBaseView<InfoEntity>{
         addSubview(scrollView)
         scrollView.addSubview(infoStackView)
         NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: topAnchor, constant: 15),
-            scrollView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            scrollView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
-            scrollView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10)
+            scrollView.topAnchor.constraint(equalTo: topAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: bottomAnchor ),
+            scrollView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: leadingAnchor)
         ])
         
         NSLayoutConstraint.activate([

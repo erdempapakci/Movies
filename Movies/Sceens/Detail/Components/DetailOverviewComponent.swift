@@ -23,8 +23,8 @@ final class DetailOverviewComponent: GenericBaseView<String> {
     private lazy var overViewStackView: UIStackView = .init(arrangedSubviews: [overviewHolder, overview]) &> {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.axis = .vertical
-    
         $0.spacing = 10
+        
         
     }
     override func configureView() {
@@ -37,10 +37,10 @@ final class DetailOverviewComponent: GenericBaseView<String> {
         addSubview(overViewStackView)
         
         NSLayoutConstraint.activate([
-            overViewStackView.topAnchor.constraint(equalTo: topAnchor, constant: 15),
+            overViewStackView.topAnchor.constraint(equalTo: topAnchor),
             overViewStackView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            overViewStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            overViewStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)
+            overViewStackView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            overViewStackView.trailingAnchor.constraint(equalTo: trailingAnchor)
           
         ])
     }

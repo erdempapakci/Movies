@@ -17,9 +17,8 @@ final class DetailViewComponent: GenericBaseView<MovieDetail> {
         
     }
    
-    
     private lazy var infoComponent: DetailViewInfoComponent = .init() &> {
-        $0.contentMode = .center
+    
         $0.translatesAutoresizingMaskIntoConstraints = false
         
     }
@@ -30,6 +29,8 @@ final class DetailViewComponent: GenericBaseView<MovieDetail> {
     }
     private lazy var movieImage: UIImageView = .init() &> {
         $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.contentMode = .scaleAspectFill
+     
         $0.clipsToBounds = false
         $0.layer.shadowColor = UIColor.black.cgColor
         $0.layer.shadowOpacity = 1
@@ -41,14 +42,12 @@ final class DetailViewComponent: GenericBaseView<MovieDetail> {
         $0.layer.cornerRadius = 10
      
     }
-    
-    private lazy var bottomButtonsComponent: DetailViewBottomComponent = .init() &> {
-        $0.isHidden = false
-    }
-    private lazy var mainStackView: UIStackView = .init(arrangedSubviews: [movieImage, infoComponent, overviewComponent, bottomButtonsComponent]) &> {
+   
+ 
+    private lazy var mainStackView: UIStackView = .init(arrangedSubviews: [movieImage, infoComponent, overviewComponent]) &> {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.axis = .vertical
-        $0.alignment = .center
+       
      
     }
     
@@ -57,8 +56,7 @@ final class DetailViewComponent: GenericBaseView<MovieDetail> {
         
         configureConstraints()
         configureData()
-        
-        
+      
     }
     
     private func configureConstraints() {
@@ -78,21 +76,15 @@ final class DetailViewComponent: GenericBaseView<MovieDetail> {
             mainStackView.leftAnchor.constraint(equalTo: scrollView.leftAnchor),
             mainStackView.rightAnchor.constraint(equalTo: scrollView.rightAnchor),
             mainStackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            mainStackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
-        ])
-        
-        
-        NSLayoutConstraint.activate([
-            movieImage.trailingAnchor.constraint(equalTo: mainStackView.trailingAnchor, constant: -20),
-            movieImage.leadingAnchor.constraint(equalTo: mainStackView.leadingAnchor, constant: 20),
+            mainStackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
             
-           
-         
+            movieImage.leadingAnchor.constraint(equalTo: mainStackView.leadingAnchor),
+                   movieImage.trailingAnchor.constraint(equalTo: mainStackView.trailingAnchor, constant: 10),
+            infoComponent.heightAnchor.constraint(equalToConstant: 100)
+            
         ])
-       
-   
-       
         
+   
         
     }
     private func configureData() {

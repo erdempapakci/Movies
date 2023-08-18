@@ -9,6 +9,8 @@ import Foundation
 import Combine
 final class DetailViewPresenter: DetailViewPresenterProtocol {
     
+    
+    
     var cancellables = Set<AnyCancellable>()
     
     @Published var detailData: MovieDetail?
@@ -51,6 +53,10 @@ final class DetailViewPresenter: DetailViewPresenterProtocol {
             }
             .store(in: &cancellables)
 
+    }
+    func openURL() {
+        
+        router.openURL(urlString: detailData?.imdbID)
     }
    
 }
