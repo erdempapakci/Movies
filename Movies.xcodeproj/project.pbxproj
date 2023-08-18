@@ -38,13 +38,18 @@
 		E811027E2A8D1EA400A0A919 /* MovieDetailEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811027D2A8D1EA400A0A919 /* MovieDetailEndPoint.swift */; };
 		E81102802A8D1EB800A0A919 /* DetailContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811027F2A8D1EB800A0A919 /* DetailContracts.swift */; };
 		E81102822A8D1ED000A0A919 /* DetailViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81102812A8D1ED000A0A919 /* DetailViewComponent.swift */; };
-		E81102842A8D1ED900A0A919 /* VisitButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81102832A8D1ED900A0A919 /* VisitButtonComponent.swift */; };
-		E81102862A8D1EE100A0A919 /* BlurViewComponen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81102852A8D1EE100A0A919 /* BlurViewComponen.swift */; };
 		E81102882A8D1F2B00A0A919 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81102872A8D1F2B00A0A919 /* DetailViewController.swift */; };
 		E811028A2A8D1F3A00A0A919 /* DetailViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81102892A8D1F3A00A0A919 /* DetailViewPresenter.swift */; };
 		E811028C2A8D1F4000A0A919 /* DetailViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811028B2A8D1F4000A0A919 /* DetailViewRouter.swift */; };
 		E811028E2A8D1F4700A0A919 /* DetailViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811028D2A8D1F4700A0A919 /* DetailViewInteractor.swift */; };
 		E81102902A8D1F7300A0A919 /* DetailViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811028F2A8D1F7300A0A919 /* DetailViewBuilder.swift */; };
+		E888B08A2A8F97DB003F71FD /* UIErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E888B0892A8F97DB003F71FD /* UIErrors.swift */; };
+		E8ABF2E82A8E51EC000A39DB /* DetailInfoComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ABF2E72A8E51EC000A39DB /* DetailInfoComponent.swift */; };
+		E8ABF2EB2A8E520C000A39DB /* InfoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ABF2EA2A8E520C000A39DB /* InfoEntity.swift */; };
+		E8ABF2ED2A8E5EFB000A39DB /* DetailOverviewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ABF2EC2A8E5EFB000A39DB /* DetailOverviewComponent.swift */; };
+		E8ABF2EF2A8E946A000A39DB /* DetailViewBottomComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ABF2EE2A8E946A000A39DB /* DetailViewBottomComponent.swift */; };
+		E8ABF2F12A8E99DF000A39DB /* GenericButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ABF2F02A8E99DF000A39DB /* GenericButton.swift */; };
+		E8ABF2F42A8E9A3C000A39DB /* CustomVisitButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ABF2F32A8E9A3C000A39DB /* CustomVisitButtonView.swift */; };
 		E8CDB1642A8D164B00E7DDEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CDB1632A8D164B00E7DDEB /* AppDelegate.swift */; };
 		E8CDB1662A8D164B00E7DDEB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CDB1652A8D164B00E7DDEB /* SceneDelegate.swift */; };
 		E8CDB16D2A8D164C00E7DDEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8CDB16C2A8D164C00E7DDEB /* Assets.xcassets */; };
@@ -100,13 +105,18 @@
 		E811027D2A8D1EA400A0A919 /* MovieDetailEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailEndPoint.swift; sourceTree = "<group>"; };
 		E811027F2A8D1EB800A0A919 /* DetailContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContracts.swift; sourceTree = "<group>"; };
 		E81102812A8D1ED000A0A919 /* DetailViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewComponent.swift; sourceTree = "<group>"; };
-		E81102832A8D1ED900A0A919 /* VisitButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitButtonComponent.swift; sourceTree = "<group>"; };
-		E81102852A8D1EE100A0A919 /* BlurViewComponen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurViewComponen.swift; sourceTree = "<group>"; };
 		E81102872A8D1F2B00A0A919 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		E81102892A8D1F3A00A0A919 /* DetailViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewPresenter.swift; sourceTree = "<group>"; };
 		E811028B2A8D1F4000A0A919 /* DetailViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewRouter.swift; sourceTree = "<group>"; };
 		E811028D2A8D1F4700A0A919 /* DetailViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewInteractor.swift; sourceTree = "<group>"; };
 		E811028F2A8D1F7300A0A919 /* DetailViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewBuilder.swift; sourceTree = "<group>"; };
+		E888B0892A8F97DB003F71FD /* UIErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIErrors.swift; sourceTree = "<group>"; };
+		E8ABF2E72A8E51EC000A39DB /* DetailInfoComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInfoComponent.swift; sourceTree = "<group>"; };
+		E8ABF2EA2A8E520C000A39DB /* InfoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoEntity.swift; sourceTree = "<group>"; };
+		E8ABF2EC2A8E5EFB000A39DB /* DetailOverviewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailOverviewComponent.swift; sourceTree = "<group>"; };
+		E8ABF2EE2A8E946A000A39DB /* DetailViewBottomComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewBottomComponent.swift; sourceTree = "<group>"; };
+		E8ABF2F02A8E99DF000A39DB /* GenericButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericButton.swift; sourceTree = "<group>"; };
+		E8ABF2F32A8E9A3C000A39DB /* CustomVisitButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVisitButtonView.swift; sourceTree = "<group>"; };
 		E8CDB1602A8D164B00E7DDEB /* Movies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Movies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8CDB1632A8D164B00E7DDEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8CDB1652A8D164B00E7DDEB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -213,6 +223,7 @@
 				E81102382A8D1B1500A0A919 /* GenericValue.swift */,
 				E811023A2A8D1B2800A0A919 /* GenericCollectionViewCell.swift */,
 				E811023C2A8D1B3E00A0A919 /* GenericBaseView.swift */,
+				E8ABF2F02A8E99DF000A39DB /* GenericButton.swift */,
 			);
 			path = Generic;
 			sourceTree = "<group>";
@@ -282,14 +293,15 @@
 		E811026A2A8D1D6100A0A919 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				E888B0862A8F97B2003F71FD /* Local */,
 				E81102722A8D1DBA00A0A919 /* Remote */,
-				E81102712A8D1DB800A0A919 /* Contracts */,
 				E81102702A8D1DB500A0A919 /* Components */,
 				E81102872A8D1F2B00A0A919 /* DetailViewController.swift */,
 				E81102892A8D1F3A00A0A919 /* DetailViewPresenter.swift */,
 				E811028B2A8D1F4000A0A919 /* DetailViewRouter.swift */,
 				E811028D2A8D1F4700A0A919 /* DetailViewInteractor.swift */,
 				E811028F2A8D1F7300A0A919 /* DetailViewBuilder.swift */,
+				E81102712A8D1DB800A0A919 /* Contracts */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -306,9 +318,11 @@
 		E81102702A8D1DB500A0A919 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				E8ABF2F22A8E9A32000A39DB /* Custom */,
 				E81102812A8D1ED000A0A919 /* DetailViewComponent.swift */,
-				E81102832A8D1ED900A0A919 /* VisitButtonComponent.swift */,
-				E81102852A8D1EE100A0A919 /* BlurViewComponen.swift */,
+				E8ABF2E72A8E51EC000A39DB /* DetailInfoComponent.swift */,
+				E8ABF2EC2A8E5EFB000A39DB /* DetailOverviewComponent.swift */,
+				E8ABF2EE2A8E946A000A39DB /* DetailViewBottomComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -346,6 +360,31 @@
 			path = Entity;
 			sourceTree = "<group>";
 		};
+		E888B0862A8F97B2003F71FD /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				E888B0882A8F97CF003F71FD /* Error */,
+				E888B0872A8F97BD003F71FD /* Entity */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		E888B0872A8F97BD003F71FD /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				E8ABF2EA2A8E520C000A39DB /* InfoEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		E888B0882A8F97CF003F71FD /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				E888B0892A8F97DB003F71FD /* UIErrors.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
 		E899AB4B2A8D48D3007267EE /* Commons */ = {
 			isa = PBXGroup;
 			children = (
@@ -354,6 +393,14 @@
 				E811022C2A8D1A8B00A0A919 /* Views */,
 			);
 			path = Commons;
+			sourceTree = "<group>";
+		};
+		E8ABF2F22A8E9A32000A39DB /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				E8ABF2F32A8E9A3C000A39DB /* CustomVisitButtonView.swift */,
+			);
+			path = Custom;
 			sourceTree = "<group>";
 		};
 		E8CDB1572A8D164B00E7DDEB = {
@@ -562,10 +609,12 @@
 				E8CDB1792A8D167100E7DDEB /* LogProvidable.swift in Sources */,
 				E81102452A8D1BC400A0A919 /* ViewBuilderProtocol.swift in Sources */,
 				E81102372A8D1AF700A0A919 /* BaseSearchViewController.swift in Sources */,
+				E8ABF2EF2A8E946A000A39DB /* DetailViewBottomComponent.swift in Sources */,
 				E8CDB1852A8D16F300E7DDEB /* APIMethod.swift in Sources */,
 				E81102692A8D1D2700A0A919 /* MainRouter.swift in Sources */,
 				E811027E2A8D1EA400A0A919 /* MovieDetailEndPoint.swift in Sources */,
 				E811024B2A8D1BF400A0A919 /* TabBarItem.swift in Sources */,
+				E8ABF2E82A8E51EC000A39DB /* DetailInfoComponent.swift in Sources */,
 				E81102352A8D1AE300A0A919 /* BaseViewController.swift in Sources */,
 				E811023B2A8D1B2800A0A919 /* GenericCollectionViewCell.swift in Sources */,
 				E8CDB19E2A8D17E900E7DDEB /* UINavigationCont + Ext.swift in Sources */,
@@ -578,6 +627,7 @@
 				E81102522A8D1C4400A0A919 /* MovieResponse.swift in Sources */,
 				E8CDB17C2A8D169800E7DDEB /* AppContainer.swift in Sources */,
 				E8CDB1872A8D170500E7DDEB /* URLConstants.swift in Sources */,
+				E8ABF2F42A8E9A3C000A39DB /* CustomVisitButtonView.swift in Sources */,
 				E8CDB1642A8D164B00E7DDEB /* AppDelegate.swift in Sources */,
 				E81102542A8D1C6300A0A919 /* MovieListEndPoint.swift in Sources */,
 				E81102652A8D1D1600A0A919 /* MainViewController.swift in Sources */,
@@ -585,19 +635,21 @@
 				E811028C2A8D1F4000A0A919 /* DetailViewRouter.swift in Sources */,
 				E81102632A8D1D0C00A0A919 /* MainInteractor.swift in Sources */,
 				E8CDB1A52A8D185300E7DDEB /* ImageManager.swift in Sources */,
-				E81102862A8D1EE100A0A919 /* BlurViewComponen.swift in Sources */,
 				E811028A2A8D1F3A00A0A919 /* DetailViewPresenter.swift in Sources */,
 				E8CDB18B2A8D172200E7DDEB /* RestClient.swift in Sources */,
 				E81102902A8D1F7300A0A919 /* DetailViewBuilder.swift in Sources */,
 				E81102782A8D1E2500A0A919 /* MainCollectionViewAdapter.swift in Sources */,
+				E8ABF2F12A8E99DF000A39DB /* GenericButton.swift in Sources */,
 				E8CDB18D2A8D174700E7DDEB /* NetworkError.swift in Sources */,
+				E8ABF2EB2A8E520C000A39DB /* InfoEntity.swift in Sources */,
 				E8CDB1982A8D17CC00E7DDEB /* UIStoryboard + Ext.swift in Sources */,
 				E8CDB1892A8D171B00E7DDEB /* EndPointProtocol.swift in Sources */,
+				E8ABF2ED2A8E5EFB000A39DB /* DetailOverviewComponent.swift in Sources */,
+				E888B08A2A8F97DB003F71FD /* UIErrors.swift in Sources */,
 				E81102822A8D1ED000A0A919 /* DetailViewComponent.swift in Sources */,
 				E8CDB1932A8D176800E7DDEB /* CustomDecoders.swift in Sources */,
 				E8CDB18F2A8D175800E7DDEB /* RESTService.swift in Sources */,
 				E8CDB1912A8D176100E7DDEB /* Decoder.swift in Sources */,
-				E81102842A8D1ED900A0A919 /* VisitButtonComponent.swift in Sources */,
 				E8CDB19A2A8D17D400E7DDEB /* UITableView + Ext.swift in Sources */,
 				E811023D2A8D1B3E00A0A919 /* GenericBaseView.swift in Sources */,
 				E811025B2A8D1CAD00A0A919 /* MainViewBuilder.swift in Sources */,
@@ -754,6 +806,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -781,6 +834,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

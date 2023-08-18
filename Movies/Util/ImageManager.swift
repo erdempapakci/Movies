@@ -24,7 +24,7 @@ final class ImageManager: NSObject, LogProvidable {
         guard let downloadUrl = url?.restoreImageURL(urlString: url!), let mainURL = URL(string: downloadUrl)  else {
             Self.logger.critical("Image URL could not prepared")
             return}
-        print(mainURL)
+      
         setImage(url: mainURL, imageView: imageview, placeholder: nil, options: .progressiveLoad)
     
     }

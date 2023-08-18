@@ -9,6 +9,8 @@ import Foundation
 import Combine
 final class DetailViewPresenter: DetailViewPresenterProtocol {
     
+    
+    
     var cancellables = Set<AnyCancellable>()
     
     @Published var detailData: MovieDetail?
@@ -44,13 +46,17 @@ final class DetailViewPresenter: DetailViewPresenterProtocol {
                 }
             } receiveValue: { [weak self] networkResponse in
                 guard let self = self else {return}
-                print(networkResponse)
+             
                 self.detailData = networkResponse
                 view?.setDetail(data: detailData!)
                
             }
             .store(in: &cancellables)
 
+    }
+    func openURL() {
+        
+        router.openURL(urlString: detailData?.imdbID)
     }
    
 }

@@ -27,7 +27,7 @@ final class TabBarViewController: BaseTabBarView {
     }
     func configureAppearance() {
         UITabBar.appearance().tintColor = .red
-        UITabBar.appearance().barTintColor = .blue
+        UITabBar.appearance().barTintColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
         let newTabBarHeight: CGFloat = 100
         var newFrame = tabBar.frame
         newFrame.size.height = newTabBarHeight

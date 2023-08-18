@@ -83,12 +83,11 @@ final class MainViewController: BaseViewController<MainPresenter> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         presenter.viewDidload()
-      
+        
     }
    
-    
     override func configureViewDidLoad() {
         super.configureViewDidLoad()
        
@@ -96,6 +95,7 @@ final class MainViewController: BaseViewController<MainPresenter> {
         configureSearch()
         
     }
+    
     private func configureSearch() {
         
         search.becomeFirstResponder()
@@ -107,7 +107,6 @@ final class MainViewController: BaseViewController<MainPresenter> {
             .sink { [weak self] text in
                 guard let self = self else {return}
                 if text.count > 2 {
-                    print(text)
                     self.presenter.searchData(query: text)
                 } else {
                     presenter.clearData()
