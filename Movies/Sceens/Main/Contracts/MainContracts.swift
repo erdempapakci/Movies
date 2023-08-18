@@ -9,7 +9,7 @@ import Foundation
 import Combine
 import UIKit
 
-typealias ViewStateBlock = (ViewState) -> Void
+
 enum ViewState {
     case loading
     case newData

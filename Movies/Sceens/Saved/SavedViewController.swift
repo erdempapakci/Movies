@@ -7,9 +7,15 @@
 
 import UIKit
 
-final class SavedViewController: UIViewController {
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+final class SavedViewController: BaseViewController<SavedViewPresenter>{
+    private lazy var tableCellComponent: SavedTableViewComponent = .init() &> {
+        $0.backgroundColor = .red
+    }
+   
+    override func configureViewDidLoad() {
+        super.configureViewDidLoad()
+        view.backgroundColor = .yellow
+        view.addSubview(tableCellComponent
+        )
     }
 }

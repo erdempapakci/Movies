@@ -19,7 +19,6 @@ import UIKit
 
 }
 
-class BaseCollectionView<T: GenericCollectionViewCell<U> & CellProvidable, U>: UIView{ }
 
 
 

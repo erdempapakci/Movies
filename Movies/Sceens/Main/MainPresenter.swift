@@ -15,7 +15,7 @@ class MainPresenter: MainPresenterProtocol {
     unowned var view: MainViewProtocol
     var interactor: MainInteractorProtocol
     var router: MainRouterProtocol
-    var viewState: ViewStateBlock?
+   
     var cancelables = Set<AnyCancellable>()
     
     init(view: MainViewProtocol, interactor: MainInteractorProtocol, router: MainRouterProtocol) {
