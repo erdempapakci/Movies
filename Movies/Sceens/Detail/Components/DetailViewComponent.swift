@@ -36,7 +36,7 @@ final class DetailViewComponent: GenericBaseView<MovieDetail> {
         $0.layer.shadowOpacity = 1
         $0.layer.shadowOffset = CGSize.zero
         $0.layer.shadowRadius = 10
-        $0.layer.cornerRadius = 15
+
         $0.layer.shadowPath = UIBezierPath(roundedRect: $0.bounds, cornerRadius: 10).cgPath
         $0.clipsToBounds = true
         $0.layer.cornerRadius = 10
@@ -92,7 +92,7 @@ final class DetailViewComponent: GenericBaseView<MovieDetail> {
             ImageManager.shared.downloadOrGetCache(url: movieData.posterPath, for: self.movieImage)
             
             
-            let infoEntity = InfoEntity(voteCount: "\(movieData.voteCount ?? 0 )", releaseDate: movieData.releaseDate, genre: movieData.genres?.first?.name, status: movieData.status, imdbID: movieData.imdbID, language: movieData.originalLanguage)
+            let infoEntity = InfoEntity(voteCount: "\(movieData.voteCount ?? 0 )", releaseDate: movieData.releaseDate, genre: movieData.genres?.first?.name, imdbID: movieData.imdbID, language: movieData.originalLanguage)
             
             infoComponent.setData(value: infoEntity)
             overviewComponent.setData(value: movieData.overview)

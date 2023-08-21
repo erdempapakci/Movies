@@ -6,7 +6,9 @@
 //
 
 import UIKit
-// ---> CANCELED 
+// ---> CANCELED
+
+
 //final class DetailViewBottomComponent: GenericBaseView<DetailViewPresenter> {
 //    
 //    private lazy var visitButton: CustomVisitButtonView = .init() &> {

@@ -14,10 +14,12 @@ protocol DetailViewProtocol: BaseViewProtocol {
 protocol DetailViewPresenterProtocol: BasePresenterProtocol, LogProvidable {
     func fetchDetail()
     func openURL()
+    func saveToCore()
     
 }
 protocol DetailViewInteractorProtocol: BaseInteractorProtocol {
     func getDetailsWithID(_ id: String) -> AnyPublisher<MovieDetail, Error>
+    func saveDataToCore(data: SavedEntity)
 }
 protocol DetailViewRouterProtocol: BaseRouterProtocol {
     

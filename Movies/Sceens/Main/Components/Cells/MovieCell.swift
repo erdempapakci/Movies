@@ -8,6 +8,7 @@
 import UIKit
 
 final class MovieListCell: GenericCollectionViewCell<MovieEntity>, CellProvidable {
+    
     typealias V = MovieEntity
     
     private lazy var imageView: UIImageView = .init() &> {

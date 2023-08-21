@@ -8,11 +8,11 @@
 import Foundation
 import OSLog
 
-protocol LogProvidable {
+public protocol LogProvidable {
     static var logger: Logger { get }
 }
 
-extension LogProvidable {
+public extension LogProvidable {
     static var logger: Logger {
         let subsystem = Bundle.main.bundleIdentifier!
         return Logger(subsystem: subsystem, category: String(describing: Self.self))

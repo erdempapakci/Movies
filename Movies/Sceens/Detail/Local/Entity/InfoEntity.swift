@@ -11,7 +11,7 @@ struct InfoEntity {
     let voteCount: String?
     let releaseDate: String?
     let genre: String?
-    let status: String?
+   
     let imdbID: String?
     let language: String?
 }
