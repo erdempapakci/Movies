@@ -11,8 +11,14 @@ final class SavedViewBuilder: BaseBuilderProtocol {
     typealias T = UIViewController
     
     static func build() -> T {
-     SavedViewController()
+    let view = SavedViewController()
+        let interactor = SavedViewInteractor()
+    let presenter = SavedViewPresenter(interactor: interactor, view: view)
+        let adapter = SavedViewAdapter(presenter: presenter, view: view)
+        view.presenter = presenter
+        view.adapter = adapter
         
+        return view
     }
     
     

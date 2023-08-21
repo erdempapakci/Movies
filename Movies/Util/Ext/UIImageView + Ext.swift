@@ -14,6 +14,7 @@ extension UIImageView {
         
         blurEffectView.frame = bounds
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        blurEffectView.alpha = 0.3
         addSubview(blurEffectView)
         
     }

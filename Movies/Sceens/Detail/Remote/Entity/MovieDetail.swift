@@ -7,10 +7,11 @@
 
 import Foundation
 
-struct MovieDetail: Decodable {
-    let adult: Bool?
+struct MovieDetail: Decodable, Hashable {
+    
+    
     let backdropPath: String?
-    let budget: Int?
+    
     let homepage: String?
     let id: Int?
     let originalTitle: String?
@@ -22,10 +23,10 @@ struct MovieDetail: Decodable {
     let video: Bool?
     let voteCount: Int?
     let genres: [DetailGenre]?
-    let status: String?
+    
     
     enum CodingKeys: String, CodingKey {
-        case adult, budget, homepage, id, overview, video, genres, status
+        case  homepage, id, overview, video, genres
         case backdropPath = "backdrop_path"
         case originalTitle = "original_title"
         case imdbID = "imdb_id"
@@ -36,8 +37,9 @@ struct MovieDetail: Decodable {
         
         
     }
+    
 }
-struct DetailGenre: Decodable {
+struct DetailGenre: Decodable, Hashable {
     let id: Int?
     let name: String?
 }

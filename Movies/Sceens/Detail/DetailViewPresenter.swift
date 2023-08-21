@@ -7,8 +7,8 @@
 
 import Foundation
 import Combine
+import UIKit
 final class DetailViewPresenter: DetailViewPresenterProtocol {
-    
     
     
     var cancellables = Set<AnyCancellable>()
@@ -27,7 +27,14 @@ final class DetailViewPresenter: DetailViewPresenterProtocol {
         self.id = id
    
     }
-    
+    func saveToCore() {
+        let uiimage = UIImageView()
+        ImageManager.shared.downloadOrGetCache(url: detailData?.posterPath, for: uiimage)
+        
+        let saved = SavedEntity(originalTitle: detailData?.originalTitle, imdbID: detailData?.imdbID, posterImage: uiimage.image, genre: detailData?.genres?.first?.name, date: detailData?.releaseDate, language: detailData?.originalLanguage, overview: detailData?.overview)
+        interactor.saveDataToCore(data: saved)
+    }
+
     func viewDidload() {
         fetchDetail()
         

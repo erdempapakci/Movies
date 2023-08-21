@@ -23,7 +23,6 @@ class MainCollectionViewAdapter: NSObject, UIGestureRecognizerDelegate{
 extension MainCollectionViewAdapter: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-     
         return presenter.count()
     }
    
@@ -42,8 +41,5 @@ extension MainCollectionViewAdapter: UICollectionViewDelegate, UICollectionViewD
         collectionView.deselectItem(at: indexPath, animated: false)
         presenter.routeToDetail(id:  presenter.didSelectItem(indexPath.row))
     }
-    
-    
-    
-
+ 
 }

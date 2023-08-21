@@ -9,7 +9,7 @@ import UIKit
 
 final class DetailViewController: BaseViewController<DetailViewPresenter> {
 
-    
+   
     private lazy var detailComponent: DetailViewComponent = .init() &> {
        
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -18,7 +18,7 @@ final class DetailViewController: BaseViewController<DetailViewPresenter> {
         $0.tintColor = .white
         $0.target = self
         $0.image = UIImage(named: "imdb")?.withRenderingMode(.alwaysOriginal)
-        $0.tintColor = .white
+       
         $0.target = self
         $0.action = #selector(visitButtonTapped)
     }
@@ -26,7 +26,7 @@ final class DetailViewController: BaseViewController<DetailViewPresenter> {
         $0.tintColor = .white
         $0.target = self
         $0.image = UIImage(systemName: "star")
-        $0.tintColor = .white
+        
         $0.target = self
         $0.action = #selector(saveButtonTapped)
     }
@@ -40,7 +40,9 @@ final class DetailViewController: BaseViewController<DetailViewPresenter> {
         
     }
     @objc private func saveButtonTapped() {
-        
+        presenter.saveToCore()
+        NotificationCenter.default.post(name: .refreshSaved, object: nil)
+
     }
   
     override func configureViewDidLoad() {
@@ -58,7 +60,6 @@ final class DetailViewController: BaseViewController<DetailViewPresenter> {
         view.addSubview(detailComponent)
         navigationItem.rightBarButtonItems = [  saveButton, visitButton,
         
-
         ]
         NSLayoutConstraint.activate([
             detailComponent.topAnchor.constraint(equalTo: view.topAnchor),
