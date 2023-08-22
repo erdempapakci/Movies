@@ -15,4 +15,5 @@ struct SavedEntity: Hashable{
     let date: String?
     let language: String?
     let overview: String?
+    let id: UUID?
 }

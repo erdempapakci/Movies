@@ -55,7 +55,7 @@ final class TabBarViewController: BaseTabBarView {
         let savedViewController = UINavigationController(rootViewController: TabBarItem.saved.viewControllers)
         navigationController?.navigationBar.barTintColor = .green
         searchViewController.tabBarItem = UITabBarItem(title: TabBarItem.search.title, image: TabBarItem.search.icons, tag: TabBarItem.search.rawValue)
-        savedViewController.tabBarItem = UITabBarItem(title: TabBarItem.saved.title, image: TabBarItem.search.icons, tag: TabBarItem.saved.rawValue)
+        savedViewController.tabBarItem = UITabBarItem(title: TabBarItem.saved.title, image: TabBarItem.saved.icons, tag: TabBarItem.saved.rawValue)
         self.setViewControllers([searchViewController, savedViewController], animated: true)
         
     }

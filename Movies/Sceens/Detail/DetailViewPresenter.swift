@@ -31,7 +31,7 @@ final class DetailViewPresenter: DetailViewPresenterProtocol {
         let uiimage = UIImageView()
         ImageManager.shared.downloadOrGetCache(url: detailData?.posterPath, for: uiimage)
         
-        let saved = SavedEntity(originalTitle: detailData?.originalTitle, imdbID: detailData?.imdbID, posterImage: uiimage.image, genre: detailData?.genres?.first?.name, date: detailData?.releaseDate, language: detailData?.originalLanguage, overview: detailData?.overview)
+        let saved = SavedEntity(originalTitle: detailData?.originalTitle, imdbID: detailData?.imdbID, posterImage: uiimage.image, genre: detailData?.genres?.first?.name, date: detailData?.releaseDate, language: detailData?.originalLanguage, overview: detailData?.overview, id: UUID())
         interactor.saveDataToCore(data: saved)
     }
 

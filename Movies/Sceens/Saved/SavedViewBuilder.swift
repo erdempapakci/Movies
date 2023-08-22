@@ -12,7 +12,7 @@ final class SavedViewBuilder: BaseBuilderProtocol {
     
     static func build() -> T {
     let view = SavedViewController()
-        let interactor = SavedViewInteractor()
+        let interactor = SavedViewInteractor(coreService: app.coreService)
     let presenter = SavedViewPresenter(interactor: interactor, view: view)
         let adapter = SavedViewAdapter(presenter: presenter, view: view)
         view.presenter = presenter

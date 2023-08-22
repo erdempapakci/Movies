@@ -11,10 +11,12 @@ protocol SavedPresenterProtocol: BasePresenterProtocol {
     func numberOfRow() -> Int
     func cellForRowAt(at index: Int) -> SavedEntity
     func deleteAll()
+    func deleteCell(at index: Int)
 }
 protocol SavedViewInteractorProtocol: BaseInteractorProtocol {
     func fetchDataFromCore(comp: @escaping(Result<[MoviesMain], Error>) -> ())
-    func deleteAllData()
+    func deleteAllDataFromCore()
+    func deleteSelectedDataFromCore(id: String)
 }
 protocol SavedViewControllerProtocol: BaseViewProtocol {
     func reloadData()

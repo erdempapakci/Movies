@@ -2,7 +2,7 @@
 //  MoviesMain+CoreDataProperties.swift
 //  Movies
 //
-//  Created by Erdem on 21.08.2023.
+//  Created by Erdem on 22.08.2023.
 //
 //
 
@@ -16,13 +16,14 @@ extension MoviesMain {
         return NSFetchRequest<MoviesMain>(entityName: "MoviesMain")
     }
 
-    @NSManaged public var title: String?
-    @NSManaged public var imdbID: String?
-    @NSManaged public var posterImage: Data?
-    @NSManaged public var genre: String?
     @NSManaged public var date: String?
+    @NSManaged public var genre: String?
+    @NSManaged public var imdbID: String?
     @NSManaged public var language: String?
     @NSManaged public var overview: String?
+    @NSManaged public var posterImage: Data?
+    @NSManaged public var title: String?
+    @NSManaged public var id: UUID?
 
 }
 
