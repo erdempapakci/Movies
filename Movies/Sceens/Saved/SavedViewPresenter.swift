@@ -34,9 +34,9 @@ final class SavedViewPresenter: SavedPresenterProtocol, LogProvidable{
             case .success(let success):
                
                     let receivedData = success.map({ main in
-                        SavedEntity.init(originalTitle: main.title, imdbID: main.imdbID, posterImage: UIImage(data: main.posterImage ?? Data()), genre: main.genre, date: main.date, language: main.language, overview: main.overview)
+                        SavedEntity.init(originalTitle: main.title, imdbID: main.imdbID, posterImage: UIImage(data: main.posterImage ?? Data()), genre: main.genre, date: main.date, language: main.language, overview: main.overview, id: UUID())
                      })
-                print(receivedData.count)
+                
                      data = receivedData
               
                     self.view?.reloadData()
@@ -46,6 +46,7 @@ final class SavedViewPresenter: SavedPresenterProtocol, LogProvidable{
             }
         }
     }
+   
     func numberOfRow() -> Int{
      
         return data.count
@@ -55,10 +56,23 @@ final class SavedViewPresenter: SavedPresenterProtocol, LogProvidable{
     }
     func deleteAll() {
         
-        interactor.deleteAllData()
+        interactor.deleteAllDataFromCore()
        data = []
         self.view?.reloadData()
     }
+  
+ 
     
-    
+    func deleteCell(at index: Int) {
+        
+        guard let id = data[index].imdbID else {return}
+        
+        defer {
+           
+            interactor.deleteSelectedDataFromCore(id: id)
+        }
+        guard index >= 0, index < data.count else { return }
+        data.remove(at: index)
+        
+    }
 }

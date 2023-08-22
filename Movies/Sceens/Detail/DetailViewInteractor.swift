@@ -10,7 +10,7 @@ import Combine
 final class DetailViewInteractor: DetailViewInteractorProtocol {
    
     var service: RestServiceProtocol
-    let coreAdapter = MoviesCRUD()
+    let coreAdapter = MoviesCore()
     init(service: RestServiceProtocol) {
         self.service = service
     }

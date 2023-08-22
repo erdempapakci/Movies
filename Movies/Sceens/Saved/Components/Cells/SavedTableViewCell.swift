@@ -62,6 +62,7 @@ final class SavedTableViewCell: GenericTableViewCell<SavedEntity>, CellProvidabl
     }
     
     func configure(_ item: SavedEntity) {
+       
         
         titleLabel.text = item.originalTitle
         movieImage.image = item.posterImage 

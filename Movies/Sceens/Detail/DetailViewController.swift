@@ -18,18 +18,15 @@ final class DetailViewController: BaseViewController<DetailViewPresenter> {
         $0.tintColor = .white
         $0.target = self
         $0.image = UIImage(named: "imdb")?.withRenderingMode(.alwaysOriginal)
-       
-        $0.target = self
         $0.action = #selector(visitButtonTapped)
     }
     private lazy var saveButton: UIBarButtonItem = .init() &> {
         $0.tintColor = .white
-        $0.target = self
         $0.image = UIImage(systemName: "star")
-        
         $0.target = self
         $0.action = #selector(saveButtonTapped)
     }
+
   
     @objc private func visitButtonTapped() {
         if (presenter.detailData?.imdbID) != nil  {

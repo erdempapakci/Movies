@@ -9,21 +9,17 @@ import Foundation
 import CoreData
 
 final class SavedViewInteractor: SavedViewInteractorProtocol {
-    let coreAdapter = MoviesCRUD()
-//    func deleteAllData() {
-//        let context = PersistenceContainer.shared.viewContext
-//        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = MoviesMain.fetchRequest()
-//                let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-//                
-//                do {
-//                    try context.execute(deleteRequest)
-//                    try context.save()
-//                } catch let error as NSError {
-//                    print("Error deleting data: \(error), \(error.userInfo)")
-//                }
-//    }
-    func deleteAllData() {
-        coreAdapter.deleteAllBatches()
+    let coreService: MoviesCore
+
+    init(coreService: MoviesCore) {
+        self.coreService = coreService
+    }
+    func deleteSelectedDataFromCore(id: String) {
+   
+        coreService.deleteItem(id: id)
+    }
+    func deleteAllDataFromCore() {
+        coreService.deleteAllBatches()
     }
     func fetchDataFromCore(comp: @escaping(Result<[MoviesMain], Error>) -> ()) {
        

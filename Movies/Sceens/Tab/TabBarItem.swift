@@ -15,7 +15,7 @@ enum TabBarItem: Int {
         switch self {
         case .search: return  "Search"
       
-        case .saved: return  "Profile"
+        case .saved: return  "Saved"
          
         }
     }
@@ -45,7 +45,7 @@ enum TabBarItem: Int {
 }
 
 extension UIImage {
-    static let searchImage = UIImage(systemName: "heart.fill")!
-    static let savedImage = UIImage(systemName: "heart.fill")!
+    static let searchImage = UIImage(systemName: "magnifyingglass.circle")!
+    static let savedImage = UIImage(systemName: "star.square")!
 }
 
