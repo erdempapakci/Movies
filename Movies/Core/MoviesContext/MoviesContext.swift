@@ -29,17 +29,19 @@ final class MoviesCore: BaseManagedObject<MoviesMain> {
     }
 
     func create(data: SavedEntity) {
-       
-        managedObject.id = UUID()
-        managedObject.date = data.date
-        managedObject.genre = data.genre
-        managedObject.imdbID = data.imdbID
-        managedObject.overview = data.overview
-        managedObject.language = data.language
-        managedObject.title = data.originalTitle
-        managedObject.posterImage = data.posterImage?.jpegData(compressionQuality: 0.3)
-       
+    
         do {
+            
+           let object = managedObject
+            object.id = UUID()
+            object.date = data.date
+            object.genre = data.genre
+            object.imdbID = data.imdbID
+            object.overview = data.overview
+            object.language = data.language
+            object.title = data.originalTitle
+            object.posterImage = data.posterImage?.jpegData(compressionQuality: 0.3)
+            
             try save()
         } catch  {
             print(error.localizedDescription)
@@ -65,7 +67,32 @@ final class MoviesCore: BaseManagedObject<MoviesMain> {
          
         }
     }
+    
+    func readData(id: String? = nil, comp: @escaping(Result<[MoviesMain], Error>) -> ()) {
+        
+             let context = PersistenceContainer.shared.viewContext
+             
+            
+             let fetchRequest: NSFetchRequest<MoviesMain> = MoviesMain.fetchRequest()
+             
+             do {
+                 
+                 let movies = try context.fetch(fetchRequest)
+                 comp(.success(movies))
+                 let validMovies = movies.filter { $0.title != id ?? nil }
+                         
+                         if validMovies.isEmpty {
+                             comp(.failure(NSError(domain: "No valid movies found.", code: 0, userInfo: nil)))
+                         } else {
+                             comp(.success(validMovies))
+                         }
+                 
+             } catch {
+                 comp(.failure(error))
 
+             }
+
+    }
 
 }
 

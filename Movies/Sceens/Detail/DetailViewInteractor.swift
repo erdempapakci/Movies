@@ -18,10 +18,26 @@ final class DetailViewInteractor: DetailViewInteractorProtocol {
         service.get(endpoint: MovieDetailEndPoint.detail(id))
     }
 
-    func saveDataToCore(data: SavedEntity) {
-        
-        coreAdapter.create(data: data)
+    func handleCreateDelete(type: CoreCRUD) {
+        switch type {
+        case .create(let data):
+            coreAdapter.create(data: data)
+        case .deleteSelected(let id):
+            coreAdapter.deleteItem(id: id)
+        case .deleteAll:
+            break
+        }
+      
+    }
+    func fetchDataFromCore(id: String, comp: @escaping(Result<[MoviesMain], Error>) -> ()) {
        
+        coreAdapter.readData(comp: comp)
+      
     }
     
+}
+enum CoreCRUD {
+    case create(SavedEntity)
+    case deleteSelected(String)
+    case deleteAll
 }

@@ -22,25 +22,11 @@ final class DetailViewController: BaseViewController<DetailViewPresenter> {
     }
     private lazy var saveButton: UIBarButtonItem = .init() &> {
         $0.tintColor = .white
-        $0.image = UIImage(systemName: "star")
         $0.target = self
-        $0.action = #selector(saveButtonTapped)
+        $0.action = #selector(saveButtonClicked)
     }
 
-  
-    @objc private func visitButtonTapped() {
-        if (presenter.detailData?.imdbID) != nil  {
-            presenter.openURL()
-        } else {
-            showError(errorString: UIErrors.emptyIMDBID.localizedDescription)
-        }
-        
-    }
-    @objc private func saveButtonTapped() {
-        presenter.saveToCore()
-        NotificationCenter.default.post(name: .refreshSaved, object: nil)
-
-    }
+   
   
     override func configureViewDidLoad() {
         super.configureViewDidLoad()
@@ -49,7 +35,7 @@ final class DetailViewController: BaseViewController<DetailViewPresenter> {
         view.backgroundColor = .darkGray
       
         configureConstraints()
-   
+       
     }
     
     private func configureConstraints() {
@@ -67,6 +53,25 @@ final class DetailViewController: BaseViewController<DetailViewPresenter> {
         
         
     }
+    @objc private func saveButtonClicked() {
+        if saveButton.image == UIImage(systemName: "star.fill")! {
+            presenter.deleteFromCore()
+            saveButton.image = UIImage(systemName: "star")
+        } else {
+            presenter.saveToCore()
+            saveButton.image = UIImage(systemName: "star.fill")
+        }
+        NotificationCenter.default.post(name: .refreshSaved, object: nil)
+        
+    }
+    @objc private func visitButtonTapped() {
+        if (presenter.detailData?.imdbID) != nil  {
+            presenter.openURL()
+        } else {
+            showError(errorString: UIErrors.emptyIMDBID.localizedDescription)
+        }
+        
+    }
     func setTitle(title: String) {
         navigationController?.setLargeTitleStyle(.custom(color: .white, font: .boldSystemFont(ofSize: 25)))
                navigationItem.title = title
@@ -79,6 +84,12 @@ extension DetailViewController: DetailViewProtocol {
    
          detailComponent.setData(value: data)
         setTitle(title: data.originalTitle ?? "")
+    }
+    func saveButtonFill() {
+        saveButton.image = UIImage(systemName: "star.fill")
+    }
+    func saveButtonUnFill() {
+        saveButton.image = UIImage(systemName: "star")
     }
 }
 

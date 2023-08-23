@@ -32,7 +32,25 @@ final class DetailViewPresenter: DetailViewPresenterProtocol {
         ImageManager.shared.downloadOrGetCache(url: detailData?.posterPath, for: uiimage)
         
         let saved = SavedEntity(originalTitle: detailData?.originalTitle, imdbID: detailData?.imdbID, posterImage: uiimage.image, genre: detailData?.genres?.first?.name, date: detailData?.releaseDate, language: detailData?.originalLanguage, overview: detailData?.overview, id: UUID())
-        interactor.saveDataToCore(data: saved)
+        interactor.handleCreateDelete(type: .create(saved))
+       
+    }
+    func deleteFromCore() {
+        guard let imdbID = detailData?.imdbID else {return}
+        interactor.handleCreateDelete(type: .deleteSelected(imdbID))
+    }
+    func insertButtonType() {
+        guard let imdbID = detailData?.imdbID else {return}
+        interactor.fetchDataFromCore(id: imdbID) { result in
+            switch result {
+            case .success(let success):
+                success.contains{$0.imdbID == imdbID} ? self.view?.saveButtonFill() : self.view?.saveButtonUnFill()
+               
+            case .failure(let failure):
+                print(failure)
+            }
+        }
+        
     }
 
     func viewDidload() {
@@ -56,6 +74,7 @@ final class DetailViewPresenter: DetailViewPresenterProtocol {
              
                 self.detailData = networkResponse
                 view?.setDetail(data: detailData!)
+                insertButtonType()
                
             }
             .store(in: &cancellables)

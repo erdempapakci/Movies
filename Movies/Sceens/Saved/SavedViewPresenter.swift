@@ -48,15 +48,17 @@ final class SavedViewPresenter: SavedPresenterProtocol, LogProvidable{
     }
    
     func numberOfRow() -> Int{
-     
+        
         return data.count
     }
     func cellForRowAt(at index: Int) -> SavedEntity {
+
         return data[index]
     }
     func deleteAll() {
         
-        interactor.deleteAllDataFromCore()
+        interactor.handleCoreData(type: .deleteAll)
+        
        data = []
         self.view?.reloadData()
     }
@@ -68,8 +70,8 @@ final class SavedViewPresenter: SavedPresenterProtocol, LogProvidable{
         guard let id = data[index].imdbID else {return}
         
         defer {
-           
-            interactor.deleteSelectedDataFromCore(id: id)
+            interactor.handleCoreData(type: .deleteSelected(id))
+          
         }
         guard index >= 0, index < data.count else { return }
         data.remove(at: index)
