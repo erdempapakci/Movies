@@ -32,13 +32,11 @@ final class SavedTableViewCell: GenericTableViewCell<SavedEntity>, CellProvidabl
         $0.layer.cornerRadius = 10
         $0.applyBlurEffect()
      
-        
     }
     
   
     override func configureSubViews() {
         super.configureSubViews()
-     
      
         configureConstraints()
     }

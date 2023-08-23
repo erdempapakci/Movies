@@ -15,8 +15,7 @@ protocol SavedPresenterProtocol: BasePresenterProtocol {
 }
 protocol SavedViewInteractorProtocol: BaseInteractorProtocol {
     func fetchDataFromCore(comp: @escaping(Result<[MoviesMain], Error>) -> ())
-    func deleteAllDataFromCore()
-    func deleteSelectedDataFromCore(id: String)
+    func handleCoreData(type: CoreCRUD)
 }
 protocol SavedViewControllerProtocol: BaseViewProtocol {
     func reloadData()

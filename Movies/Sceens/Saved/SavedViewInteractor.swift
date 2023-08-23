@@ -14,37 +14,25 @@ final class SavedViewInteractor: SavedViewInteractorProtocol {
     init(coreService: MoviesCore) {
         self.coreService = coreService
     }
-    func deleteSelectedDataFromCore(id: String) {
-   
-        coreService.deleteItem(id: id)
+    
+    func handleCoreData(type: CoreCRUD){
+        
+        switch type {
+        case .create:
+            break
+        case .deleteSelected(let id):
+            coreService.deleteItem(id: id)
+            break
+        case .deleteAll:
+            coreService.deleteAllBatches()
+            break
+        }
     }
-    func deleteAllDataFromCore() {
-        coreService.deleteAllBatches()
-    }
+    
     func fetchDataFromCore(comp: @escaping(Result<[MoviesMain], Error>) -> ()) {
        
-            let context = PersistenceContainer.shared.viewContext
-            
-           
-            let fetchRequest: NSFetchRequest<MoviesMain> = MoviesMain.fetchRequest()
-            
-            do {
-                
-                let movies = try context.fetch(fetchRequest)
-                let validMovies = movies.filter { $0.title != nil }
-                        
-                        if validMovies.isEmpty {
-                            comp(.failure(NSError(domain: "No valid movies found.", code: 0, userInfo: nil)))
-                        } else {
-                            comp(.success(validMovies))
-                        }
-                
-            
-               
-            } catch {
-                comp(.failure(error))
-
-            }
+        coreService.readData(comp: comp)
       
     }
+    
 }

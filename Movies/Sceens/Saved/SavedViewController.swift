@@ -14,10 +14,7 @@ final class SavedViewController: BaseViewController<SavedViewPresenter>{
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     var adapter: SavedViewAdapter!
-    
-   
-    
-   
+ 
     private lazy var deleteButton: UIBarButtonItem = .init() &> {
         $0.title = "Delete All"
         $0.tintColor = .red
