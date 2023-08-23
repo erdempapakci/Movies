@@ -10,7 +10,7 @@ import Combine
 final class DetailViewInteractor: DetailViewInteractorProtocol {
    
     var service: RestServiceProtocol
-    let coreAdapter = MoviesCore()
+    let coreService = MoviesCore()
     init(service: RestServiceProtocol) {
         self.service = service
     }
@@ -21,9 +21,9 @@ final class DetailViewInteractor: DetailViewInteractorProtocol {
     func handleCreateDelete(type: CoreCRUD) {
         switch type {
         case .create(let data):
-            coreAdapter.create(data: data)
+            coreService.create(data: data)
         case .deleteSelected(let id):
-            coreAdapter.deleteItem(id: id)
+            coreService.deleteItem(id: id)
         case .deleteAll:
             break
         }
@@ -31,13 +31,8 @@ final class DetailViewInteractor: DetailViewInteractorProtocol {
     }
     func fetchDataFromCore(id: String, comp: @escaping(Result<[MoviesMain], Error>) -> ()) {
        
-        coreAdapter.readData(comp: comp)
+        coreService.readData(comp: comp)
       
     }
     
-}
-enum CoreCRUD {
-    case create(SavedEntity)
-    case deleteSelected(String)
-    case deleteAll
 }
