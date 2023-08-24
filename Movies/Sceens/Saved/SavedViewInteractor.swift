@@ -31,6 +31,7 @@ final class SavedViewInteractor: SavedViewInteractorProtocol {
     
     func fetchDataFromCore(comp: @escaping(Result<[MoviesMain], Error>) -> ()) {
        
+        
         coreService.readData(comp: comp)
       
     }

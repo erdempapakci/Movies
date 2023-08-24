@@ -25,26 +25,40 @@ final class DetailViewPresenter: DetailViewPresenterProtocol {
         self.interactor = interactor
         self.router = router
         self.id = id
-   
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadButtonState), name: .refreshButtonState, object: nil)
+    }
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .refreshButtonState, object: nil)
+    }
+   @objc func reloadButtonState() {
+       insertButtonType()
     }
     func saveToCore() {
         let uiimage = UIImageView()
         ImageManager.shared.downloadOrGetCache(url: detailData?.posterPath, for: uiimage)
         
-        let saved = SavedEntity(originalTitle: detailData?.originalTitle, imdbID: detailData?.imdbID, posterImage: uiimage.image, genre: detailData?.genres?.first?.name, date: detailData?.releaseDate, language: detailData?.originalLanguage, overview: detailData?.overview, id: UUID())
+        let saved = SavedEntity(originalTitle: detailData?.originalTitle, imdbID: detailData?.imdbID, posterImage: uiimage.image, genre: detailData?.genres?.first?.name, date: detailData?.releaseDate, language: detailData?.originalLanguage, overview: detailData?.overview, id: detailData?.id)
         interactor.handleCreateDelete(type: .create(saved))
        
     }
     func deleteFromCore() {
-        guard let imdbID = detailData?.imdbID else {return}
-        interactor.handleCreateDelete(type: .deleteSelected(imdbID))
+        guard let id = detailData?.id else {return}
+        interactor.handleCreateDelete(type: .deleteSelected(id))
     }
     func insertButtonType() {
-        guard let imdbID = detailData?.imdbID else {return}
-        interactor.fetchDataFromCore(id: imdbID) { result in
+        guard let id = detailData?.id else {return}
+        interactor.fetchDataFromCore(id: id) { result in
             switch result {
             case .success(let success):
-                success.contains{$0.imdbID == imdbID} ? self.view?.saveButtonFill() : self.view?.saveButtonUnFill()
+                let moviesWithMatchingID = success.filter { $0.id == id }
+
+                if !moviesWithMatchingID.isEmpty {
+                    self.view?.saveButtonFill()
+                    return
+                } else {
+                    self.view?.saveButtonUnFill()
+                }
+                
                
             case .failure(let failure):
                 print(failure)

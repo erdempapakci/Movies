@@ -26,6 +26,7 @@ final class DetailViewController: BaseViewController<DetailViewPresenter> {
         $0.action = #selector(saveButtonClicked)
     }
 
+    
    
   
     override func configureViewDidLoad() {

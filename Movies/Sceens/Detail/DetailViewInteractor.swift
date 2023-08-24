@@ -29,10 +29,10 @@ final class DetailViewInteractor: DetailViewInteractorProtocol {
         }
       
     }
-    func fetchDataFromCore(id: String, comp: @escaping(Result<[MoviesMain], Error>) -> ()) {
+    func fetchDataFromCore(id: Int, comp: @escaping(Result<[MoviesMain], Error>) -> ()) {
        
-        coreService.readData(comp: comp)
-      
+        coreService.readData(id: id, comp: comp)
+        
     }
     
 }
