@@ -9,6 +9,6 @@ import Foundation
 
 enum CoreCRUD {
     case create(SavedEntity)
-    case deleteSelected(String)
+    case deleteSelected(Int)
     case deleteAll
 }

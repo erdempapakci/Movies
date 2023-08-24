@@ -22,7 +22,7 @@ protocol DetailViewPresenterProtocol: BasePresenterProtocol, LogProvidable {
 protocol DetailViewInteractorProtocol: BaseInteractorProtocol {
     func getDetailsWithID(_ id: String) -> AnyPublisher<MovieDetail, Error>
     func handleCreateDelete(type: CoreCRUD)
-    func fetchDataFromCore(id: String, comp: @escaping(Result<[MoviesMain], Error>) -> ())
+    func fetchDataFromCore(id: Int, comp: @escaping(Result<[MoviesMain], Error>) -> ())
 }
 protocol DetailViewRouterProtocol: BaseRouterProtocol {
     

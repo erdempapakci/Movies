@@ -42,7 +42,8 @@ extension SavedViewAdapter: UITableViewDelegate, UITableViewDataSource {
         if editingStyle == .delete {
                 presenter.deleteCell(at: indexPath.row)
                 
-                tableView.deleteRows(at: [indexPath], with: .automatic) 
+                tableView.deleteRows(at: [indexPath], with: .automatic)
+                
             }
     }
     

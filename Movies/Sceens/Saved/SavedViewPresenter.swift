@@ -27,14 +27,14 @@ final class SavedViewPresenter: SavedPresenterProtocol, LogProvidable{
         viewDidload()
     }
     func viewDidload() {
-        
+       
         interactor.fetchDataFromCore { [weak self] result in
             guard let self = self else {return}
             switch result {
             case .success(let success):
                
                     let receivedData = success.map({ main in
-                        SavedEntity.init(originalTitle: main.title, imdbID: main.imdbID, posterImage: UIImage(data: main.posterImage ?? Data()), genre: main.genre, date: main.date, language: main.language, overview: main.overview, id: UUID())
+                        SavedEntity.init(originalTitle: main.title, imdbID: main.imdbID, posterImage: UIImage(data: main.posterImage ?? Data()), genre: main.genre, date: main.date, language: main.language, overview: main.overview, id: Int(main.id))
                      })
                 
                      data = receivedData
@@ -59,7 +59,7 @@ final class SavedViewPresenter: SavedPresenterProtocol, LogProvidable{
         
         interactor.handleCoreData(type: .deleteAll)
         
-       data = []
+       
         self.view?.reloadData()
     }
   
@@ -67,10 +67,11 @@ final class SavedViewPresenter: SavedPresenterProtocol, LogProvidable{
     
     func deleteCell(at index: Int) {
         
-        guard let id = data[index].imdbID else {return}
+        guard let id = data[index].id else {return}
         
         defer {
             interactor.handleCoreData(type: .deleteSelected(id))
+            self.view?.reloadData()
           
         }
         guard index >= 0, index < data.count else { return }

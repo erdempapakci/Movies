@@ -16,6 +16,7 @@ protocol SavedPresenterProtocol: BasePresenterProtocol {
 protocol SavedViewInteractorProtocol: BaseInteractorProtocol {
     func fetchDataFromCore(comp: @escaping(Result<[MoviesMain], Error>) -> ())
     func handleCoreData(type: CoreCRUD)
+    
 }
 protocol SavedViewControllerProtocol: BaseViewProtocol {
     func reloadData()
