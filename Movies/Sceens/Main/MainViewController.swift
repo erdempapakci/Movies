@@ -13,12 +13,8 @@ final class MainViewController: BaseViewController<MainPresenter> {
     var cancellables = Set<AnyCancellable>()
     var adapter: MainCollectionViewAdapter!
   
-  
-    private lazy var search: SearchComponent = .init() &> {
-        $0.searchBar.translatesAutoresizingMaskIntoConstraints = false
-        
-    }
-   
+ 
+     var search: SearchComponent!
    
     private lazy var movieListCellComponent: MovieListCellComponents = {
         
@@ -30,7 +26,7 @@ final class MainViewController: BaseViewController<MainPresenter> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.backgroundColor = .white
         presenter.viewDidload()
         
     }
@@ -44,11 +40,8 @@ final class MainViewController: BaseViewController<MainPresenter> {
     }
     
     private func configureSearch() {
-        
-        search.becomeFirstResponder()
-        search.searchResultsUpdater = search
+        search = SearchComponent(searchResultsController: nil)
         navigationItem.searchController = search
-     
         search.textSearch
             .receive(on: DispatchQueue.main)
             .sink { [weak self] text in
@@ -57,6 +50,7 @@ final class MainViewController: BaseViewController<MainPresenter> {
                     self.presenter.searchData(query: text)
                 } else {
                     presenter.clearData()
+                    setTitle()
                 }
                    
   
@@ -66,20 +60,15 @@ final class MainViewController: BaseViewController<MainPresenter> {
  
     private func implementComponents() {
         
-      
-        view.addSubview(movieListCellComponent)
-        view.addSubview(search.searchBar)
        
-        NSLayoutConstraint.activate([
-            search.searchBar.topAnchor.constraint(equalTo: view.topAnchor)
-        
-        ])
+        view.addSubview(movieListCellComponent)
+     
       
         NSLayoutConstraint.activate([
             
             movieListCellComponent.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             movieListCellComponent.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            movieListCellComponent.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
+            movieListCellComponent.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             movieListCellComponent.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
         
@@ -113,7 +102,6 @@ extension MainViewController: MainPresenterDelegate {
         }
     }
     
-    
 }
 
 
@@ -130,6 +118,7 @@ extension MainViewController: MainViewProtocol {
         
         navigationController?.setLargeTitleStyle(.custom(color: .black, font: .boldSystemFont(ofSize: 30)))
                navigationItem.title = "Search"
+        navigationItem.largeTitleDisplayMode = .always
         
     }
     func reloadData() {

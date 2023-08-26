@@ -70,8 +70,6 @@ class MainPresenter: MainPresenterProtocol {
     
     }
    
-   
-    
     func didSelectItem(_ index: Int) -> String {
        
         guard let id = data[index].id else {return ""}
