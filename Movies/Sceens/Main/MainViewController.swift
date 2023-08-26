@@ -8,71 +8,14 @@
 import UIKit
 import Combine
 
-final class EmptyResultComponent: GenericBaseView<Bool> {
-    override var data: Bool? {
-            didSet {
-                handleShowing()
-            }
-        }
-    private lazy var resultNotFoundImage: UIImageView = .init() &> {
-        $0.image = UIImage(systemName: "heart.fill")
-        $0.contentMode = .scaleAspectFill
-        $0.translatesAutoresizingMaskIntoConstraints = false
-    }
-    
-    private lazy var resultNotFoundTitle: UILabel = .init() &> {
-        $0.font = .systemFont(ofSize: 10)
-        $0.translatesAutoresizingMaskIntoConstraints = false
-    }
-    
-    private lazy var mainStackView: UIStackView = .init(arrangedSubviews: [resultNotFoundImage, resultNotFoundTitle]) &> {
-        $0.axis = .vertical
-        $0.translatesAutoresizingMaskIntoConstraints = false
-    }
-   
-    override func configureView() {
-        super.configureView()
-       
-        configureConstrants()
-        handleShowing()
-   
-    }
-    private func handleShowing() {
-           guard let show = data else { return }
-           
-           if show {
-               if mainStackView.superview == nil {
-                   addSubview(mainStackView)
-                   NSLayoutConstraint.activate([
-                       mainStackView.centerXAnchor.constraint(equalTo: centerXAnchor),
-                       mainStackView.centerYAnchor.constraint(equalTo: centerYAnchor)
-                   ])
-               }
-           } else {
-               mainStackView.removeFromSuperview()
-           }
-       }
-    private func configureConstrants() {
-       
-        mainStackView.frame = .init(x: 50, y: 50, width: 100, height: 200)
-    }
-}
-
 final class MainViewController: BaseViewController<MainPresenter> {
     
     var cancellables = Set<AnyCancellable>()
     var adapter: MainCollectionViewAdapter!
   
-  
-    private lazy var search: SearchComponent = .init() &> {
-        $0.searchBar.translatesAutoresizingMaskIntoConstraints = false
-        
-    }
-    private lazy var emptyResultComponent: EmptyResultComponent = .init() &> {
-        $0.data = false
-        $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.largeContentTitle = ""
-    }
+ 
+     var search: SearchComponent!
+   
     private lazy var movieListCellComponent: MovieListCellComponents = {
         
         let layout = MovieListCellComponents(adapter: adapter)
@@ -83,7 +26,7 @@ final class MainViewController: BaseViewController<MainPresenter> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.backgroundColor = .white
         presenter.viewDidload()
         
     }
@@ -97,11 +40,8 @@ final class MainViewController: BaseViewController<MainPresenter> {
     }
     
     private func configureSearch() {
-        
-        search.becomeFirstResponder()
-        search.searchResultsUpdater = search
+        search = SearchComponent(searchResultsController: nil)
         navigationItem.searchController = search
-     
         search.textSearch
             .receive(on: DispatchQueue.main)
             .sink { [weak self] text in
@@ -110,6 +50,7 @@ final class MainViewController: BaseViewController<MainPresenter> {
                     self.presenter.searchData(query: text)
                 } else {
                     presenter.clearData()
+                    setTitle()
                 }
                    
   
@@ -118,28 +59,17 @@ final class MainViewController: BaseViewController<MainPresenter> {
     }
  
     private func implementComponents() {
-        view.addSubview(emptyResultComponent)
-        view.addSubview(movieListCellComponent)
-        view.addSubview(search.searchBar)
-       
-        NSLayoutConstraint.activate([
-            search.searchBar.topAnchor.constraint(equalTo: view.topAnchor)
         
-        ])
+       
+        view.addSubview(movieListCellComponent)
+     
       
         NSLayoutConstraint.activate([
             
             movieListCellComponent.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             movieListCellComponent.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            movieListCellComponent.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
+            movieListCellComponent.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             movieListCellComponent.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-        ])
-        NSLayoutConstraint.activate([
-            
-            emptyResultComponent.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            emptyResultComponent.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            emptyResultComponent.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
-            emptyResultComponent.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 100),
         ])
         
     }
@@ -166,12 +96,11 @@ extension MainViewController: MainPresenterDelegate {
           
         case .noData:
             
-            self.emptyResultComponent.data = true
+            presenter.clearData()
            
             
         }
     }
-    
     
 }
 
@@ -189,11 +118,15 @@ extension MainViewController: MainViewProtocol {
         
         navigationController?.setLargeTitleStyle(.custom(color: .black, font: .boldSystemFont(ofSize: 30)))
                navigationItem.title = "Search"
+        navigationItem.largeTitleDisplayMode = .always
         
     }
     func reloadData() {
        
-        movieListCellComponent.collectionView.reloadData()
+        DispatchQueue.main.async {
+            self.movieListCellComponent.collectionView.reloadData()
+        }
+      
     
     }
     

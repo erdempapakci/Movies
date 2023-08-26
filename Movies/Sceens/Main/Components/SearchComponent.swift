@@ -15,7 +15,12 @@ final class SearchComponent: BaseSearchController {
     
     override func prepareViewDidLoad() {
         super.prepareViewDidLoad()
-        searchBar.backgroundColor = .white
+        self.searchBar.placeholder = "Search Movie"
+        self.searchBar.searchBarStyle = .prominent
+        self.obscuresBackgroundDuringPresentation = false
+        self.searchResultsUpdater = self
+       
+        
     }
 }
 extension SearchComponent: UISearchResultsUpdating {
@@ -23,7 +28,7 @@ extension SearchComponent: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
             
                 self.textSearch.send(searchController.searchBar.text ?? "")
          

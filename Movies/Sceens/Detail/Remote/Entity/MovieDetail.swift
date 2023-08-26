@@ -26,17 +26,16 @@ struct MovieDetail: Decodable, Hashable {
     
     
     enum CodingKeys: String, CodingKey {
-        case  homepage, id, overview, video, genres
         case backdropPath = "backdrop_path"
+        case homepage, id, overview, video, genres
         case originalTitle = "original_title"
         case imdbID = "imdb_id"
         case originalLanguage = "original_language"
         case posterPath = "poster_path"
         case releaseDate = "release_date"
         case voteCount = "vote_count"
-        
-        
     }
+
     
 }
 struct DetailGenre: Decodable, Hashable {

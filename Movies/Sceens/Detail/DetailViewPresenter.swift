@@ -10,7 +10,6 @@ import Combine
 import UIKit
 final class DetailViewPresenter: DetailViewPresenterProtocol {
     
-    
     var cancellables = Set<AnyCancellable>()
     
     @Published var detailData: MovieDetail?
@@ -59,7 +58,6 @@ final class DetailViewPresenter: DetailViewPresenterProtocol {
                     self.view?.saveButtonUnFill()
                 }
                 
-               
             case .failure(let failure):
                 print(failure)
             }
