@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreData
+
 final class MoviesCore: BaseManagedObject<MoviesMain> {
     
     func deleteItem(id: Int) {
