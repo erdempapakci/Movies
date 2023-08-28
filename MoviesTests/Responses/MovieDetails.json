@@ -1,0 +1,82 @@
+{
+    "adult": false,
+    "backdrop_path": "/hoszursvZR1C054sTXVQBcBDory.jpg",
+    "belongs_to_collection": null,
+    "budget": 3000000,
+    "genres": [
+        {
+            "id": 18,
+            "name": "Drama"
+        },
+        {
+            "id": 10749,
+            "name": "Romance"
+        }
+    ],
+    "homepage": "",
+    "id": 292431,
+    "imdb_id": "tt3774694",
+    "original_language": "fr",
+    "original_title": "Love",
+    "overview": "Murphy is an American living in Paris who enters a highly sexually and emotionally charged relationship with the unstable Electra. Unaware of the seismic effect it will have on their relationship, they invite their pretty neighbor into their bed.",
+    "popularity": 22.594,
+    "poster_path": "/21UExtLnYmeH6sAxD4zdlrb5PG6.jpg",
+    "production_companies": [
+        {
+            "id": 856,
+            "logo_path": "/z0vTTWBhZggM09oZWSY3hbXgPKv.png",
+            "name": "Wild Bunch",
+            "origin_country": "FR"
+        },
+        {
+            "id": 1157,
+            "logo_path": null,
+            "name": "Les Cinémas de la Zone",
+            "origin_country": "FR"
+        },
+        {
+            "id": 30666,
+            "logo_path": "/g8LmDZVFWDRJW72sj0nAj1gh8ac.png",
+            "name": "RT Features",
+            "origin_country": "BR"
+        },
+        {
+            "id": 2700,
+            "logo_path": "/h3bdysr6aNtFqK7DXQu1Rh43rwk.png",
+            "name": "Rectangle Productions",
+            "origin_country": "FR"
+        },
+        {
+            "id": 11199,
+            "logo_path": "/ursSXLOZaDxiZ84sEgfXbiFnYaa.png",
+            "name": "SCOPE Pictures",
+            "origin_country": "BE"
+        }
+    ],
+    "production_countries": [
+        {
+            "iso_3166_1": "BE",
+            "name": "Belgium"
+        },
+        {
+            "iso_3166_1": "FR",
+            "name": "France"
+        }
+    ],
+    "release_date": "2015-07-06",
+    "revenue": 249083,
+    "runtime": 134,
+    "spoken_languages": [
+        {
+            "english_name": "English",
+            "iso_639_1": "en",
+            "name": "English"
+        }
+    ],
+    "status": "Released",
+    "tagline": "",
+    "title": "Love",
+    "video": false,
+    "vote_average": 6.458,
+    "vote_count": 2212
+}
