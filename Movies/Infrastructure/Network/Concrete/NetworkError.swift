@@ -8,11 +8,11 @@
 import Foundation
 
 enum NetworkError: Error {
-    
+
 case decodingError(description: String)
 case api(description: String)
 case encodingError(description: String)
 case requestError(description: String)
 case urlResponseCode(description: String)
-    
+
 }

@@ -12,5 +12,7 @@ protocol ViewBuilderProtocol {
 }
 
 protocol DetailViewBuilderProtocol {
+    // swiftlint:disable identifier_name
     static func build(with ID: String) -> UIViewController
 }
+// swiftlint:enable identifier_name

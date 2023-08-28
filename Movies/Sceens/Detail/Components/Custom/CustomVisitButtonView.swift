@@ -7,8 +7,7 @@
 
 import UIKit
 class CustomVisitButtonView: GenericButtonView<DetailViewPresenter> {
-    
-    
+
     override func configureButtonView() {
         super.configureButtonView()
         setupButton()
@@ -16,7 +15,7 @@ class CustomVisitButtonView: GenericButtonView<DetailViewPresenter> {
     func setupButton() {
         setShadow()
         setTitleColor(.white, for: .normal)
-        
+
         backgroundColor      = .white
         titleLabel?.font     = .systemFont(ofSize: 10)
         layer.cornerRadius   = 25
@@ -38,16 +37,14 @@ class CustomVisitButtonView: GenericButtonView<DetailViewPresenter> {
         shake.autoreverses  = true
         let fromPoint       = CGPoint(x: center.x - 8, y: center.y)
         let fromValue       = NSValue(cgPoint: fromPoint)
-        
+
         let toPoint         = CGPoint(x: center.x + 8, y: center.y)
         let toValue         = NSValue(cgPoint: toPoint)
-        
+
         shake.fromValue     = fromValue
         shake.toValue       = toValue
-        
+
         layer.add(shake, forKey: "shake")
     }
-    
+
 }
-
-

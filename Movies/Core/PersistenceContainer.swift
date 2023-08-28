@@ -9,13 +9,13 @@ import Foundation
 import CoreData
 
 final class PersistenceContainer: NSPersistentContainer {
-   
+
     static let shared = PersistenceContainer(name: "MoviesCD")
     func setup() {
-        
-        loadPersistentStores(completionHandler: { (storeDescription, error) in
+
+        loadPersistentStores(completionHandler: { (_, error) in
             if let error = error as NSError? {
-           
+
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
@@ -27,5 +27,3 @@ final class PersistenceContainer: NSPersistentContainer {
         return backgroundContext
     }
 }
-
-

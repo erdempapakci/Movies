@@ -8,18 +8,17 @@
 import UIKit
 final class SavedTableViewCell: GenericTableViewCell<SavedEntity>, CellProvidable {
     typealias V = SavedEntity
-    
-    private lazy var titleLabel: UILabel = .init() &>  {
+
+    private lazy var titleLabel: UILabel = .init() &> {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.textColor = .black
-        
+
         $0.font = UIFont.boldSystemFont(ofSize: 20)
-        
+
     }
-    private lazy var movieImage: UIImageView = .init() &>  {
+    private lazy var movieImage: UIImageView = .init() &> {
         $0.translatesAutoresizingMaskIntoConstraints = false
 
-        
         $0.contentMode = .scaleToFill
         $0.clipsToBounds = false
         $0.layer.shadowColor = UIColor.black.cgColor
@@ -31,39 +30,36 @@ final class SavedTableViewCell: GenericTableViewCell<SavedEntity>, CellProvidabl
         $0.clipsToBounds = true
         $0.layer.cornerRadius = 10
         $0.applyBlurEffect()
-     
+
     }
-    
-  
+
     override func configureSubViews() {
         super.configureSubViews()
-     
+
         configureConstraints()
     }
     private func configureConstraints() {
         addSubview(movieImage)
         addSubview(titleLabel)
-       
-        
+
         NSLayoutConstraint.activate([
-            
+
             movieImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 50),
             movieImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
             movieImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             movieImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
-            
+
             titleLabel.topAnchor.constraint(equalTo: topAnchor),
             titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            titleLabel.bottomAnchor.constraint(equalTo: movieImage.topAnchor),
-     
+            titleLabel.bottomAnchor.constraint(equalTo: movieImage.topAnchor)
+
         ])
     }
-    
+
     func configure(_ item: SavedEntity) {
-       
-        
+
         titleLabel.text = item.originalTitle
-        movieImage.image = item.posterImage 
+        movieImage.image = item.posterImage
     }
-    
+
 }

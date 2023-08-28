@@ -12,7 +12,7 @@ extension UINavigationController {
         case light
         case dark
         case custom(color: UIColor, font: UIFont)
-        
+
         var attributes: [NSAttributedString.Key: Any] {
             switch self {
             case .light:
@@ -33,7 +33,7 @@ extension UINavigationController {
             }
         }
     }
-    
+
     func setLargeTitleStyle(_ style: TitleStyle) {
         navigationBar.prefersLargeTitles = true
         navigationBar.largeTitleTextAttributes = style.attributes

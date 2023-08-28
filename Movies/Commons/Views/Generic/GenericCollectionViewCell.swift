@@ -8,17 +8,13 @@
 import UIKit
 
  class GenericCollectionViewCell<T>: UICollectionViewCell {
-    
+
     var item: T!
      var state: ViewState!
-     
+
     override func layoutSubviews() {
         super.layoutSubviews()
-        
+
     }
 
 }
-
-
-
-

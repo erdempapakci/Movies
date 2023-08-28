@@ -8,22 +8,22 @@
 import UIKit
 
 protocol BaseViewProtocol: AnyObject {
-    
+
 }
 protocol BasePresenterProtocol: AnyObject {
-    
+
     func viewDidload()
 }
 
 protocol BaseRouterProtocol: AnyObject {
-    
+
 }
 
 protocol BaseInteractorProtocol: AnyObject {
-    
+
 }
-protocol BaseBuilderProtocol{
-    
+protocol BaseBuilderProtocol {
+
     associatedtype T: UIViewController
     static func build() -> T
 }

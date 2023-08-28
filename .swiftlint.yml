@@ -1,0 +1,12 @@
+
+comma: error
+
+force_cast: error
+
+opening_brace:
+  severity: error
+  
+disabled_rules:
+  - line_length
+  - type_name
+  - redundant_string_enum_value

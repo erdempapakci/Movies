@@ -8,24 +8,25 @@
 import UIKit
 
 extension UITableView {
-    
+
     func genericRegisterCell<T: UITableViewCell>(_ type: T.Type) {
         let cellName = String(describing: T.self)
-        
+
         if Bundle.main.path(forResource: cellName, ofType: "nib") != nil {
             let nib = UINib(nibName: cellName, bundle: Bundle.main)
             register(nib, forCellReuseIdentifier: cellName)
         } else {
             register(type, forCellReuseIdentifier: cellName)
-           
+
         }
-  
+
     }
     func genericdequeueReusableCell<T: UITableViewCell>(type: T.Type, _ indexPath: IndexPath) -> T {
         let cellName = String(describing: T.self)
-       
+        // swiftlint:disable force_cast
         return dequeueReusableCell(withIdentifier: cellName, for: indexPath) as! T
-      
+
     }
-    
+
 }
+// swiftlint:enable force_cast

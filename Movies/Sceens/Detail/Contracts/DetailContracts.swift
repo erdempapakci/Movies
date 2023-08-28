@@ -17,14 +17,14 @@ protocol DetailViewPresenterProtocol: BasePresenterProtocol, LogProvidable {
     func fetchDetail()
     func openURL()
     func saveToCore()
-    
+
 }
 protocol DetailViewInteractorProtocol: BaseInteractorProtocol {
     func getDetailsWithID(_ id: String) -> AnyPublisher<MovieDetail, Error>
     func handleCreateDelete(type: CoreCRUD)
-    func fetchDataFromCore(id: Int, comp: @escaping(Result<[MoviesMain], Error>) -> ())
+    func fetchDataFromCore(id: Int, comp: @escaping(Result<[MoviesMain], Error>) -> Void)
 }
 protocol DetailViewRouterProtocol: BaseRouterProtocol {
-    
+
     func openURL(urlString: String?)
 }

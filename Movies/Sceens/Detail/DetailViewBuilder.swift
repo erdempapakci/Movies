@@ -7,8 +7,8 @@
 
 import UIKit
 
-final class DetailViewBuilder: DetailViewBuilderProtocol{
-    
+final class DetailViewBuilder: DetailViewBuilderProtocol {
+    // swiftlint:disable identifier_name
     static func build(with ID: String) -> UIViewController {
         let view = DetailViewController()
         let interactor = DetailViewInteractor(service: app.service)
@@ -18,8 +18,6 @@ final class DetailViewBuilder: DetailViewBuilderProtocol{
         presenter.view = view
         return view
     }
-    
-    
-  
 
 }
+// swiftlint:enable identifier_name

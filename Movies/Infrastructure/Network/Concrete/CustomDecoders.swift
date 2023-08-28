@@ -10,7 +10,7 @@ import Foundation
 public enum CustomDecoders {
     static let Decoder: JSONDecoder = {
        let decoder = JSONDecoder()
-       
+
         return decoder
     }()
 }

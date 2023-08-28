@@ -12,5 +12,5 @@ enum UIErrors: String, Error {
     var localizedDescription: String {
             return rawValue
         }
-    
+
 }

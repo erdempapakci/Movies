@@ -8,16 +8,15 @@
 import UIKit
 
 class GenericTableViewCell<T>: UITableViewCell {
-   
+
    var item: T!
-  
-    
+
    override func layoutSubviews() {
        super.layoutSubviews()
        configureSubViews()
    }
     func configureSubViews() {
-        
+
     }
 
 }
