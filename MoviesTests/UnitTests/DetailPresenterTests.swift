@@ -24,11 +24,8 @@ class DetailPresenterTests: XCTestCase, LogProvidable {
     func test_DetailPresenter_fetchDetail_isEqual() {
         let expectation = XCTestExpectation(description: "Fetch detail expectation")
 
-        // Set up a subscriber to the publisher before calling fetchDetail
         let cancellable = presenter.$mockDetailData
             .sink { detail in
-                // Assert or compare the received detail with your JSON data
-
                 if let detail = detail {
                     do {
                         let jsonData = try StaticJSONMapper.decode(file: "MovieDetails", type: MovieDetail.self)
