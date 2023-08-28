@@ -9,7 +9,6 @@
 import Foundation
 import CoreData
 
-
 extension MoviesMain {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<MoviesMain> {
@@ -27,6 +26,6 @@ extension MoviesMain {
 
 }
 
-extension MoviesMain : Identifiable {
+extension MoviesMain: Identifiable {
 
 }

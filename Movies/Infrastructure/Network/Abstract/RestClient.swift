@@ -8,10 +8,8 @@
 import Foundation
 import Combine
 
-
 protocol RestServiceProtocol {
-    
-    func get<T: Decodable, S: EndPointProtocol>(endpoint: S) -> AnyPublisher<T, Error>
-    
-}
 
+    func get<T: Decodable, S: EndPointProtocol>(endpoint: S) -> AnyPublisher<T, Error>
+
+}

@@ -9,7 +9,6 @@ import Foundation
 import Combine
 import UIKit
 
-
 enum ViewState {
     case loading
     case newData
@@ -17,8 +16,7 @@ enum ViewState {
     case noData
     case failure(Error)
     case finished
- 
-    
+
 }
 protocol MainPresenterDelegate: AnyObject {
     func handleState(state: ViewState)
@@ -30,8 +28,7 @@ protocol MainViewProtocol: BaseViewProtocol {
     func hideIndicator()
 }
 protocol MainPresenterProtocol: BasePresenterProtocol {
-    
-    
+
     func count() -> Int
     func cellForRowAt(index: Int) -> MovieEntity
     func searchData(query: String)
@@ -45,7 +42,7 @@ extension MainPresenterProtocol {
     func isLoadingCell(index: Int) -> Bool {
         return true
     }
-    
+
 }
 protocol MainInteractorProtocol: BaseInteractorProtocol {
     func getListOfQuery(query: String) -> AnyPublisher<MovieResponse, Error>

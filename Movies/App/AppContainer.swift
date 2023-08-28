@@ -11,8 +11,5 @@ let app = AppContainer()
 final class AppContainer {
     let service = RESTService()
     let coreService = MoviesCore()
-    
- 
-    
-}
 
+}

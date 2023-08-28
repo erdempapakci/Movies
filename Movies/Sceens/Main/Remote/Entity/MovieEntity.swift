@@ -16,11 +16,11 @@ struct MovieEntity: Decodable, Hashable {
     let releaseDate: String?
     enum CodingKeys: String, CodingKey {
         case adult, id, overview
-        
+
         case vote = "vote_count"
         case title = "original_title"
         case posterImage = "poster_path"
         case releaseDate = "release_date"
     }
-    
+
 }

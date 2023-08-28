@@ -8,16 +8,13 @@
 import UIKit
 
 final class TabBarBuilder: BaseBuilderProtocol {
- 
+
     typealias T = UIViewController
-    
+
     static func build() -> T {
-      
+
       let tabBarVC = TabBarViewController()
         return tabBarVC
     }
-    
- 
-    
-}
 
+}

@@ -15,7 +15,9 @@ precedencegroup ChainingPrecedence {
 infix operator &>: ChainingPrecedence
 
 @discardableResult
+// swiftlint:disable operator_whitespace
 func &><T>(left: T, right: (T) -> Void) -> T {
     right(left)
     return left
 }
+// swiftlint:enable operator_whitespace

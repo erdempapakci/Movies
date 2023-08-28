@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct SavedEntity: Hashable{
+struct SavedEntity: Hashable {
     let originalTitle: String?
     let imdbID: String?
     let posterImage: UIImage?

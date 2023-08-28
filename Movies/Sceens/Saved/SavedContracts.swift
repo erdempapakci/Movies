@@ -14,11 +14,11 @@ protocol SavedPresenterProtocol: BasePresenterProtocol {
     func deleteCell(at index: Int)
 }
 protocol SavedViewInteractorProtocol: BaseInteractorProtocol {
-    func fetchDataFromCore(comp: @escaping(Result<[MoviesMain], Error>) -> ())
+    func fetchDataFromCore(comp: @escaping(Result<[MoviesMain], Error>) -> Void)
     func handleCoreData(type: CoreCRUD)
-    
+
 }
 protocol SavedViewControllerProtocol: BaseViewProtocol {
     func reloadData()
-   
+
 }

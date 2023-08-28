@@ -9,7 +9,7 @@ import UIKit
 
 final class SavedViewBuilder: BaseBuilderProtocol {
     typealias T = UIViewController
-    
+
     static func build() -> T {
     let view = SavedViewController()
         let interactor = SavedViewInteractor(coreService: app.coreService)
@@ -17,9 +17,8 @@ final class SavedViewBuilder: BaseBuilderProtocol {
         let adapter = SavedViewAdapter(presenter: presenter, view: view)
         view.presenter = presenter
         view.adapter = adapter
-        
+
         return view
     }
-    
-    
+
 }

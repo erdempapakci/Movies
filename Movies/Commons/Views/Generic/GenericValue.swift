@@ -7,15 +7,15 @@
 
 import Foundation
 
-protocol GenericValue  {
-    
+protocol GenericValue {
+
     associatedtype T
     var value: T { get  }
 }
 
 protocol CellProvidable {
     associatedtype V: Hashable
- 
+
     func configure(_ item: V)
 }
 

@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 final class DetailViewInteractor: DetailViewInteractorProtocol {
-   
+
     var service: RestServiceProtocol
     let coreService = MoviesCore()
     init(service: RestServiceProtocol) {
@@ -27,12 +27,12 @@ final class DetailViewInteractor: DetailViewInteractorProtocol {
         case .deleteAll:
             break
         }
-      
+
     }
-    func fetchDataFromCore(id: Int, comp: @escaping(Result<[MoviesMain], Error>) -> ()) {
-       
+    func fetchDataFromCore(id: Int, comp: @escaping(Result<[MoviesMain], Error>) -> Void) {
+
         coreService.readData(id: id, comp: comp)
-        
+
     }
-    
+
 }

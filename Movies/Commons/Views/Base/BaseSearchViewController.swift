@@ -13,8 +13,8 @@ class BaseSearchController: UISearchController {
         super.viewDidLoad()
         prepareViewDidLoad()
     }
-    
+
     func prepareViewDidLoad() {
-        
+
     }
 }

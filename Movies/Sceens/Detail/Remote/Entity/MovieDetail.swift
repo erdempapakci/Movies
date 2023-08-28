@@ -8,10 +8,9 @@
 import Foundation
 
 struct MovieDetail: Decodable, Hashable {
-    
-    
+
     let backdropPath: String?
-    
+
     let homepage: String?
     let id: Int?
     let originalTitle: String?
@@ -23,8 +22,7 @@ struct MovieDetail: Decodable, Hashable {
     let video: Bool?
     let voteCount: Int?
     let genres: [DetailGenre]?
-    
-    
+
     enum CodingKeys: String, CodingKey {
         case backdropPath = "backdrop_path"
         case homepage, id, overview, video, genres
@@ -36,7 +34,6 @@ struct MovieDetail: Decodable, Hashable {
         case voteCount = "vote_count"
     }
 
-    
 }
 struct DetailGenre: Decodable, Hashable {
     let id: Int?

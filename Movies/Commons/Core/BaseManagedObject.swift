@@ -12,7 +12,7 @@ class BaseManagedObject<T: NSManagedObject> {
     func createObject() -> T {
         return T(context: PersistenceContainer.shared.viewContext)
     }
-    
+
     func save() throws {
         try PersistenceContainer.shared.viewContext.save()
     }

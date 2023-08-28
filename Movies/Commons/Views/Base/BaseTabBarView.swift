@@ -8,14 +8,14 @@
 import UIKit
 
  class BaseTabBarView: UITabBarController, UITabBarControllerDelegate {
-    
+
      override func viewDidLoad() {
          super.viewDidLoad()
          configureViewDidLoad()
      }
-     
+
       func configureViewDidLoad() {
-         
+
      }
-    
+
 }

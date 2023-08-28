@@ -67,8 +67,6 @@
 		E8ABF2F42A8E9A3C000A39DB /* CustomVisitButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ABF2F32A8E9A3C000A39DB /* CustomVisitButtonView.swift */; };
 		E8C773C22A9A145F0026C72B /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = E8C773C12A9A145F0026C72B /* SDWebImage */; };
 		E8C773C92A9A21C60026C72B /* JSONMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C773C82A9A21C60026C72B /* JSONMapper.swift */; };
-		E8C773CB2A9A22C00026C72B /* MovieDetails.json in Resources */ = {isa = PBXBuildFile; fileRef = E8C773CA2A9A22C00026C72B /* MovieDetails.json */; };
-		E8C773CC2A9A28D20026C72B /* MovieDetails.json in Resources */ = {isa = PBXBuildFile; fileRef = E8C773CA2A9A22C00026C72B /* MovieDetails.json */; };
 		E8C773DA2A9A34720026C72B /* MoviesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C773D92A9A34720026C72B /* MoviesUITests.swift */; };
 		E8C773DC2A9A34720026C72B /* MoviesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C773DB2A9A34720026C72B /* MoviesUITestsLaunchTests.swift */; };
 		E8C773E42A9A34E00026C72B /* DetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C773E32A9A34E00026C72B /* DetailPresenterTests.swift */; };
@@ -94,6 +92,7 @@
 		E8CDB1A02A8D17F600E7DDEB /* UIImageView + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CDB19F2A8D17F600E7DDEB /* UIImageView + Ext.swift */; };
 		E8CDB1A32A8D184C00E7DDEB /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CDB1A22A8D184C00E7DDEB /* Operators.swift */; };
 		E8CDB1A52A8D185300E7DDEB /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CDB1A42A8D185300E7DDEB /* ImageManager.swift */; };
+		E8E15D942A9CADCF002629AC /* MovieDetails.json in Resources */ = {isa = PBXBuildFile; fileRef = E8E15D932A9CADCF002629AC /* MovieDetails.json */; };
 		E8FBD5B42A90C75300E60B0F /* MoviesCD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E8FBD5B22A90C75300E60B0F /* MoviesCD.xcdatamodeld */; };
 		E8FBD5C02A90F99400E60B0F /* PersistenceContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FBD5B52A90CB1000E60B0F /* PersistenceContainer.swift */; };
 /* End PBXBuildFile section */
@@ -169,7 +168,6 @@
 		E8C773B32A9A09370026C72B /* MoviesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoviesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8C773BD2A9A0D690026C72B /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		E8C773C82A9A21C60026C72B /* JSONMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONMapper.swift; sourceTree = "<group>"; };
-		E8C773CA2A9A22C00026C72B /* MovieDetails.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = MovieDetails.json; path = ../../../MovieDetails.json; sourceTree = "<group>"; };
 		E8C773D72A9A34720026C72B /* MoviesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoviesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8C773D92A9A34720026C72B /* MoviesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesUITests.swift; sourceTree = "<group>"; };
 		E8C773DB2A9A34720026C72B /* MoviesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -198,6 +196,7 @@
 		E8CDB19F2A8D17F600E7DDEB /* UIImageView + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView + Ext.swift"; sourceTree = "<group>"; };
 		E8CDB1A22A8D184C00E7DDEB /* Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
 		E8CDB1A42A8D185300E7DDEB /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		E8E15D932A9CADCF002629AC /* MovieDetails.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MovieDetails.json; sourceTree = "<group>"; };
 		E8FBD5B32A90C75300E60B0F /* MoviesCD.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MoviesCD.xcdatamodel; sourceTree = "<group>"; };
 		E8FBD5B52A90CB1000E60B0F /* PersistenceContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -579,7 +578,7 @@
 		E8C773BF2A9A124C0026C72B /* Responses */ = {
 			isa = PBXGroup;
 			children = (
-				E8C773CA2A9A22C00026C72B /* MovieDetails.json */,
+				E8E15D932A9CADCF002629AC /* MovieDetails.json */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -806,6 +805,7 @@
 				E8CDB15C2A8D164B00E7DDEB /* Sources */,
 				E8CDB15D2A8D164B00E7DDEB /* Frameworks */,
 				E8CDB15E2A8D164B00E7DDEB /* Resources */,
+				E8E15D952A9CAE4B002629AC /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -870,7 +870,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8C773CB2A9A22C00026C72B /* MovieDetails.json in Resources */,
+				E8E15D942A9CADCF002629AC /* MovieDetails.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -885,13 +885,34 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8C773CC2A9A28D20026C72B /* MovieDetails.json in Resources */,
 				E8CDB1702A8D164C00E7DDEB /* LaunchScreen.storyboard in Resources */,
 				E8CDB16D2A8D164C00E7DDEB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E8E15D952A9CAE4B002629AC /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E8C773AF2A9A09370026C72B /* Sources */ = {

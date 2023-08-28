@@ -8,8 +8,7 @@
 import UIKit
 // ---> CANCELED
 
-
-//final class DetailViewBottomComponent: GenericBaseView<DetailViewPresenter> {
+// final class DetailViewBottomComponent: GenericBaseView<DetailViewPresenter> {
 //    
 //    private lazy var visitButton: CustomVisitButtonView = .init() &> {
 //        $0.backgroundColor = .red
@@ -58,5 +57,5 @@ import UIKit
 //    
 //    
 //  
-//}
+// }
 //
